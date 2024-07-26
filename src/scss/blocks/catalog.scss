@@ -1,0 +1,12 @@
+.catalog {
+	margin-top: -4px;
+	padding-bottom: 120px;
+	&__body {
+		display: flex;
+		gap: 75px;
+	}
+	&__wrap {
+		width: 75%;
+		max-width: 844px;
+	}
+}

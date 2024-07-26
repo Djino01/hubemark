@@ -1,0 +1,42 @@
+.product-colors {
+	margin-top: -8px;
+	&__title {
+		font-size: 14px;
+		color: var(--dark-gray);
+		margin-bottom: 16px;
+		span {
+			font-size: 16px;
+			color: var(--black);
+		}
+	}
+	&__swiper {
+		* {
+			box-sizing: border-box;
+		}
+	}
+	&__slide {
+		border-radius: 12px;
+		border: 2px solid var(--field-gray);
+		@include transition(border);
+		&.swiper-slide-active {
+			border-color: var(--violet);
+		}
+		@media (hover: hover) {
+			&:hover {
+				border-color: var(--violet);
+			}
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 70px;
+		width: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.product-description {
+	&__text {
+		max-height: 48px;
+		overflow: hidden;
+		margin-bottom: 16px;
+		p + p {
+			margin-top: 12px;
+		}
+		p {
+			span {
+				color: var(--dark-gray);
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.product-reviews {
+	display: flex;
+	&__rating {
+		display: flex;
+		gap: 8px;
+		font-weight: 700;
+		color: #3b4453;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+		font-size: 14px;
+		color: var(--dark-gray);
+		position: relative;
+		&::before {
+			content: "";
+			width: 4px;
+			height: 4px;
+			background-color: var(--black);
+			border-radius: 50%;
+			margin: 0 9px;
+		}
+		&:first-child {
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

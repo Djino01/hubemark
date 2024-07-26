@@ -1,0 +1,11 @@
+.questions {
+	max-width: 542px;
+	&__top {
+		max-width: 440px;
+		margin-bottom: 20px;
+		&-title {
+			font-weight: 700;
+			margin-bottom: 12px;
+		}
+	}
+}
