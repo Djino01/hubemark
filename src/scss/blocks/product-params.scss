@@ -63,3 +63,15 @@
 		}
 	}
 }
+@media (max-width: 1200px) {
+}
+@media (max-width: 1010px) {
+	.product-params {
+		gap: 10px;
+		&__row {
+			gap: 10px;
+		}
+	}
+}
+@media (max-width: 760px) {
+}

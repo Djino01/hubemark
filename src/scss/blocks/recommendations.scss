@@ -1,0 +1,32 @@
+.recommendations {
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+	margin-bottom: 120px;
+	&__title {
+		margin-bottom: 24px;
+	}
+}
+
+.recommendations-swiper {
+	overflow: hidden;
+	* {
+		box-sizing: border-box;
+	}
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1010px) {
+	.recommendations {
+		gap: 60px;
+		margin-bottom: 80px;
+	}
+}
+@media (max-width: 760px) {
+	.recommendations {
+		overflow: hidden;
+	}
+	.recommendations-swiper {
+		overflow: visible;
+	}
+}

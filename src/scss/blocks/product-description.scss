@@ -13,3 +13,15 @@
 		}
 	}
 }
+@media (max-width: 1200px) {
+}
+@media (max-width: 1010px) {
+	.product-description {
+		&__text {
+			max-height: 56px;
+			margin-bottom: 10px;
+		}
+	}
+}
+@media (max-width: 760px) {
+}

@@ -1,10 +1,7 @@
 .product-reviews {
 	display: flex;
 	&__rating {
-		display: flex;
-		gap: 8px;
 		font-weight: 700;
-		color: #3b4453;
 	}
 	&__item {
 		display: flex;
@@ -24,6 +21,15 @@
 		&:first-child {
 			&::before {
 				display: none;
+			}
+		}
+	}
+}
+@media (max-width: 760px) {
+	.product-reviews {
+		&__item {
+			&::before {
+				margin: 0 6px;
 			}
 		}
 	}

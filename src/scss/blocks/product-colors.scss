@@ -10,6 +10,7 @@
 		}
 	}
 	&__swiper {
+		overflow: hidden;
 		* {
 			box-sizing: border-box;
 		}
@@ -39,4 +40,13 @@
 			object-fit: contain;
 		}
 	}
+}
+@media (max-width: 1200px) {
+	.product-colors {
+		margin-top: -8px;
+	}
+}
+@media (max-width: 1010px) {
+}
+@media (max-width: 760px) {
 }

@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^5.0.36",
+    "dragscroll": "0.0.8",
     "focus-visible": "^5.1.0",
     "gsap": "^3.5.1",
     "gulp-sass-glob": "^1.1.0",

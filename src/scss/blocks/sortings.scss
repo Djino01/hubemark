@@ -1,0 +1,48 @@
+.sortings {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 24px;
+	color: var(--dark-gray);
+	margin-bottom: 24px;
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+	}
+	&__btn {
+		position: relative;
+		padding-right: 15px;
+		@include transition(color);
+		&::after {
+			content: "";
+			position: absolute;
+			width: 11px;
+			height: 10px;
+			top: calc(50% - 5px);
+			right: 0;
+			background-image: url(../img/icons/sorting-btn-active.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			opacity: 0;
+			@include transition(opacity);
+		}
+		@media (hover: hover) {
+			&:hover {
+				color: var(--black);
+			}
+		}
+		&.active {
+			color: var(--black);
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}
+@media (max-width: 680px) {
+	.sortings {
+		&__body {
+			gap: 16px;
+		}
+	}
+}

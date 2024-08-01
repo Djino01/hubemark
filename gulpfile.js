@@ -44,8 +44,7 @@ exports.styles = styles
 const stylesLibs = () => {
   return src([
       'node_modules/swiper/swiper-bundle.min.css',
-	  'node_modules/slick-slider/slick/slick.css',
-	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+      'node_modules/@fancyapps/ui/dist/fancybox/fancybox.css',
     ])
     .pipe(concat('libs.css'))
     .pipe(dest('docs/css'))
@@ -60,10 +59,8 @@ const scriptsLibs = () => {
   return src([  
 	  'node_modules/jquery/dist/jquery.min.js',
       'node_modules/swiper/swiper-bundle.min.js',
-      'node_modules/gsap/dist/gsap.min.js',
-	  'node_modules/slick-slider/slick/slick.js',
-	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-	  'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+      'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
+      'node_modules/dragscroll/dragscroll.js',
     ])
     .pipe(concat('libs.js'))
     .pipe(dest('docs/js'))

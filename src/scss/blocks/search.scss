@@ -39,3 +39,24 @@
 		}
 	}
 }
+@media (max-width: 1270px) {
+	.search {
+		width: calc(100% - 120px);
+	}
+}
+@media (max-width: 1010px) {
+	.search {
+		width: calc(100% - 64px);
+		&__field {
+			font-size: 14px;
+			padding: 6px 0;
+		}
+	}
+}
+@media (max-width: 680px) {
+	.search {
+		width: 100%;
+		border-radius: 5px;
+		padding: 2px 2px 2px 16px;
+	}
+}

@@ -1,12 +1,32 @@
 .catalog {
 	margin-top: -4px;
-	padding-bottom: 120px;
+	padding-bottom: 80px;
 	&__body {
 		display: flex;
 		gap: 75px;
 	}
 	&__wrap {
-		width: 75%;
+		width: calc(100% - 400px);
 		max-width: 844px;
+		flex: 1;
 	}
+}
+@media (max-width: 1200px) {
+	.catalog {
+		&__body {
+			gap: 0;
+		}
+		&__wrap {
+			max-width: 100%;
+			width: 100%;
+			flex: auto;
+		}
+	}
+}
+@media (max-width: 1010px) {
+	.catalog {
+		padding-bottom: 60px;
+	}
+}
+@media (max-width: 760px) {
 }

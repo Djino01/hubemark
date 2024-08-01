@@ -1,3 +1,3 @@
-$(".like").on("click", function () {
+$(".like--js").on("click", function () {
 	$(this).toggleClass("active");
 });
