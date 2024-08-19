@@ -1,0 +1,76 @@
+.basket {
+	padding-bottom: 80px;
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		gap: 24px;
+		margin-top: 24px;
+	}
+	&__wrap {
+		flex: 1;
+		max-width: 852px;
+	}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		border-radius: 22px;
+		padding: 32px;
+		background-color: var(--light-gray);
+		& + & {
+			margin-top: 24px;
+		}
+	}
+	&-payment {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		.form {
+			&__body {
+				gap: 8px;
+			}
+			&__label {
+				width: calc(50% - 4px);
+			}
+			&__caption {
+				background-color: transparent;
+			}
+			&__field {
+				background-color: var(--white);
+				border-color: var(--white);
+			}
+		}
+		.checbox {
+			&_item {
+				&:not(:last-child) {
+					margin-bottom: 16px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.basket {
+		&__container {
+			border-radius: 15px;
+			padding: 24px;
+			gap: 24px;
+		}
+		&-payment {
+			gap: 24px;
+		}
+	}
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1010px) {
+	.basket {
+		&__body {
+			flex-wrap: wrap;
+		}
+	}
+}
+@media (max-width: 760px) {
+}
+@media (max-width: 680px) {
+}

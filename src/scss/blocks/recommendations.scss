@@ -6,12 +6,18 @@
 	&__title {
 		margin-bottom: 24px;
 	}
-}
-
-.recommendations-swiper {
-	overflow: hidden;
-	* {
-		box-sizing: border-box;
+	&-swiper-big {
+		.recommendations-card {
+			&__top {
+				height: 360px;
+			}
+		}
+	}
+	.swiper {
+		overflow: hidden;
+		* {
+			box-sizing: border-box;
+		}
 	}
 }
 @media (max-width: 1200px) {
@@ -25,8 +31,8 @@
 @media (max-width: 760px) {
 	.recommendations {
 		overflow: hidden;
-	}
-	.recommendations-swiper {
-		overflow: visible;
+		.swiper {
+			overflow: visible;
+		}
 	}
 }

@@ -7,4 +7,5 @@ $(".read-completely--js").on("click", function (e) {
 		$(this).find("span").text("Читать полностью");
 	}
 	$(this).parent().find(".reviews-card__text").toggleClass('active');
+	$(this).parent().find(".filter__options").toggleClass('active');
 });

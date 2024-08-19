@@ -1,0 +1,146 @@
+.filter {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100vh;
+	max-width: 428px;
+	width: 100%;
+	background-color: var(--white);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	transform: translateX(-100%);
+	transition: all 0.3s ease-in-out;
+	&.active {
+		transform: translateX(0%);
+	}
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 40px 40px 24px 40px;
+		background-color: var(--white);
+	}
+	.form__label {
+		display: block;
+		margin-bottom: 8px;
+	}
+	&__prices {
+		display: flex;
+		gap: 8px;
+		.form {
+			&__label {
+				width: calc(50% - 4px);
+			}
+		}
+	}
+	&__body {
+		padding: 16px 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		height: calc(100% - 216px);
+		&.dragscroll {
+			&::-webkit-scrollbar {
+				width: 8px;
+				height: auto;
+				background-color: rgba(245, 245, 248, 0);
+				border-radius: 10px;
+				transition: all 0.3s;
+				opacity: 1;
+				cursor: pointer;
+				display: block;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: rgba(245, 245, 248, 1);
+				border-radius: 10px;
+				transition: all 0.3s;
+				cursor: pointer;
+				display: block;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: #905ff4;
+				transition: all 0.3s;
+				cursor: pointer;
+			}
+		}
+	}
+	&__bottom {
+		padding: 20px 40px 24px 40px;
+		background-color: var(--white);
+	}
+	&__value {
+		text-align: center;
+		color: var(--dark-gray);
+		margin-bottom: 16px;
+	}
+	&__caption {
+		font-weight: 700;
+		line-height: 100%;
+		color: var(--black);
+		margin-bottom: 16px;
+	}
+	&__buttons {
+		display: flex;
+		gap: 10px;
+	}
+	&__btn {
+		width: calc(50% - 5px);
+	}
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	&__options {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		max-height: 156px;
+		overflow: hidden;
+		&.active {
+			max-height: inherit;
+		}
+		.checbox {
+			&__icon {
+				margin-right: 8px;
+			}
+			&__caption {
+				line-height: 1;
+				color: var(--black);
+				position: relative;
+				top: 2px;
+			}
+		}
+	}
+	.read-completely {
+		margin-top: 16px;
+	}
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1010px) {
+}
+@media (max-width: 760px) {
+	.filter {
+		padding-bottom: 44px;
+		&__top {
+			padding: 20px 20px 12px 20px;
+		}
+		&__body {
+			padding: 12px 20px;
+			gap: 24px;
+			height: calc(100% - 174px);
+		}
+		&__bottom {
+			padding: 20px 20px 20px 20px;
+		}
+	}
+}
+@media (max-width: 680px) {
+}
