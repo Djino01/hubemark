@@ -72,17 +72,12 @@ exports.scriptsLibs = scriptsLibs
 // Scripts
 
 const scripts = () => {
-  return src('src/js/*.js')
-    .pipe(babel({
-        presets: ['@babel/preset-env']
-    }))
-    .pipe(concat('index.js'))
-    .pipe(terser())
-    .pipe(dest('docs/js'))
-    .pipe(sync.stream())
+	return src('src/js/*.js')
+	.pipe(dest('docs/js'))
+	.pipe(sync.stream())
 };
 
-exports.scripts = scripts
+exports.scripts = scripts;
 
 // Copy
 
