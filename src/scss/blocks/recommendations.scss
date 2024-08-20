@@ -19,6 +19,11 @@
 			box-sizing: border-box;
 		}
 	}
+	.recommendations-card {
+		&::before {
+			display: none;
+		}
+	}
 }
 @media (max-width: 1200px) {
 }

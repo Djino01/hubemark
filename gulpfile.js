@@ -31,7 +31,6 @@ const styles = () => {
       require('postcss-import'),
       require('autoprefixer'),
     ]))
-    .pipe(csso())
     .pipe(concat('index.css'))
     .pipe(dest('docs/css'))
     .pipe(sync.stream())
