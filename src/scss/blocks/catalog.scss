@@ -10,6 +10,30 @@
 		max-width: 844px;
 		flex: 1;
 	}
+	&-btn {
+		span {
+			position: relative;
+		}
+		@include transition(all);
+		&.active {
+			background-color: var(--light-violet);
+			color: var(--violet);
+			span {
+				background-color: var(--violet);
+				&:first-child {
+					transform: rotate(45deg);
+					top: 5px;
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:last-child {
+					transform: rotate(-45deg);
+					top: -5px;
+				}
+			}
+		}
+	}
 }
 @media (max-width: 1200px) {
 	.catalog {
