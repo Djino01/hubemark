@@ -66,6 +66,13 @@
 @media (max-width: 1010px) {
 }
 @media (max-width: 760px) {
+	.receiving {
+		&-search {
+			border-radius: 8px;
+			padding: 4px 4px 4px 16px;
+			margin-bottom: 12px;
+		}
+	}
 }
 @media (max-width: 680px) {
 }

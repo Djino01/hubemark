@@ -49,13 +49,36 @@
 					<div class="catalog-btn__caption">Каталог</div>
 				</button>
 				<form action="#" class="search">
-					<input type="text" class="search__field" placeholder="Искать на Hubemart">
-					<button class="search-btn btn-item">
-						<div class="btn-item__icon">
-							<img src="img/icons/search.svg" alt="">
+					<div class="search__body">
+						<input id="search-field" type="text" class="search__field" placeholder="Искать на Hubemart">
+						<div class="search__buttons">
+							<button class="search-clear">
+								<img src="img/icons/search-clear.svg" alt="">
+							</button>
+							<button class="search-btn btn-item">
+								<div class="btn-item__icon">
+									<img src="img/icons/search.svg" alt="">
+								</div>
+								<div class="btn-item__caption">Найти</div>
+							</button>
 						</div>
-						<div class="btn-item__caption">Найти</div>
-					</button>
+					</div>
+					<div class="search__result">
+						<!--button class="search__more">
+							Показать все результаты (23)
+						</!--button-->
+						<ul class="search__list">
+							<li class="search__item">
+								<a href="#" class="search__name">Тостер для хлеба</a>
+							</li>
+							<li class="search__item">
+								<a href="#" class="search__name">Тостер для бутербродов</a>
+							</li>
+							<li class="search__item">
+								<a href="#" class="search__name">Тостер для сэндвичей</a>
+							</li>
+						</ul>
+					</div>
 				</form>
 			</div>
 			<div class="header-nav">
@@ -275,7 +298,13 @@
 		<div class="menu__box">
 			<div class="menu__block" data-menu-block="1">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Бытовая техника</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Бытовая техника</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -330,7 +359,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="2">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Зоотовары</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Зоотовары</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -385,7 +420,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="3">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Дача и сад</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Дача и сад</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -440,7 +481,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="4">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Для школы и офиса</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Для школы и офиса</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -495,7 +542,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="5">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Книги</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Книги</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -550,7 +603,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="6">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Красота и здоровье</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Красота и здоровье</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -605,7 +664,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="7">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Одежда и обувь</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Одежда и обувь</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -660,7 +725,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="8">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Продукты</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Продукты</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -715,7 +786,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="9">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Строительство и ремонт</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Строительство и ремонт</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -770,7 +847,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="10">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Товары для детей</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Товары для детей</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -825,7 +908,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="11">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Товары для дома</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Товары для дома</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -880,7 +969,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="12">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Электроника</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Электроника</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -935,7 +1030,13 @@
 			</div>
 			<div class="menu__block" data-menu-block="13">
 				<div class="menu__container dragscroll">
-					<div class="menu__title">Хобби и творчество</div>
+					<div class="menu__top">
+						<div class="menu__back">
+							<img src="img/icons/arrow-menu.svg" alt="">
+							<span>Назад</span>
+						</div>
+						<div class="menu__title">Хобби и творчество</div>
+					</div>
 					<div class="menu__items">
 						<a href="#" class="menu__item" data-item="1">
 							<div class="menu__item-box">
@@ -993,7 +1094,13 @@
 			<div class="menu__block" data-item-block="1">
 				<div class="menu__wrap">
 					<div class="menu__container dragscroll">
-						<div class="menu__caption">Грызуны</div>
+						<div class="menu__top">
+							<div class="menu__back">
+								<img src="img/icons/arrow-menu.svg" alt="">
+								<span>Назад</span>
+							</div>
+							<div class="menu__caption">Грызуны</div>
+						</div>
 						<div class="menu__items">
 							<a href="#" class="menu__item">
 								<div class="menu__item-box">
@@ -1072,7 +1179,13 @@
 			<div class="menu__block" data-item-block="2">
 				<div class="menu__wrap">
 					<div class="menu__container dragscroll">
-						<div class="menu__caption">Кошки</div>
+						<div class="menu__top">
+							<div class="menu__back">
+								<img src="img/icons/arrow-menu.svg" alt="">
+								<span>Назад</span>
+							</div>
+							<div class="menu__caption">Кошки</div>
+						</div>
 						<div class="menu__items">
 							<a href="#" class="menu__item">
 								<div class="menu__item-box">
@@ -1151,7 +1264,13 @@
 			<div class="menu__block" data-item-block="3">
 				<div class="menu__wrap">
 					<div class="menu__container dragscroll">
-						<div class="menu__caption">Птицы</div>
+						<div class="menu__top">
+							<div class="menu__back">
+								<img src="img/icons/arrow-menu.svg" alt="">
+								<span>Назад</span>
+							</div>
+							<div class="menu__caption">Птицы</div>
+						</div>
 						<div class="menu__items">
 							<a href="#" class="menu__item">
 								<div class="menu__item-box">
@@ -1230,7 +1349,13 @@
 			<div class="menu__block" data-item-block="4">
 				<div class="menu__wrap">
 					<div class="menu__container dragscroll">
-						<div class="menu__caption">Рыбы и рептилии</div>
+						<div class="menu__top">
+							<div class="menu__back">
+								<img src="img/icons/arrow-menu.svg" alt="">
+								<span>Назад</span>
+							</div>
+							<div class="menu__caption">Рыбы и рептилии</div>
+						</div>
 						<div class="menu__items">
 							<a href="#" class="menu__item">
 								<div class="menu__item-box">
@@ -1309,7 +1434,13 @@
 			<div class="menu__block" data-item-block="5">
 				<div class="menu__wrap">
 					<div class="menu__container dragscroll">
-						<div class="menu__caption">Собаки</div>
+						<div class="menu__top">
+							<div class="menu__back">
+								<img src="img/icons/arrow-menu.svg" alt="">
+								<span>Назад</span>
+							</div>
+							<div class="menu__caption">Собаки</div>
+						</div>
 						<div class="menu__items">
 							<a href="#" class="menu__item">
 								<div class="menu__item-box">
@@ -1388,7 +1519,13 @@
 			<div class="menu__block" data-item-block="6">
 				<div class="menu__wrap">
 					<div class="menu__container dragscroll">
-						<div class="menu__caption">Фермерское хозяйство</div>
+						<div class="menu__top">
+							<div class="menu__back">
+								<img src="img/icons/arrow-menu.svg" alt="">
+								<span>Назад</span>
+							</div>
+							<div class="menu__caption">Фермерское хозяйство</div>
+						</div>
 						<div class="menu__items">
 							<a href="#" class="menu__item">
 								<div class="menu__item-box">
@@ -1699,6 +1836,7 @@
 <script src="js/read-completely.js"></script>
 <script src="js/recommendations.js"></script>
 <script src="js/modal.js"></script>
+<script src="js/search.js"></script>
 </body>
 
 </html>

@@ -23,13 +23,36 @@
 					<div class="catalog-btn__caption">Каталог</div>
 				</button>
 				<form action="#" class="search">
-					<input type="text" class="search__field" placeholder="Искать на Hubemart">
-					<button class="search-btn btn-item">
-						<div class="btn-item__icon">
-							<img src="img/icons/search.svg" alt="">
+					<div class="search__body">
+						<input id="search-field" type="text" class="search__field" placeholder="Искать на Hubemart">
+						<div class="search__buttons">
+							<button class="search-clear">
+								<img src="img/icons/search-clear.svg" alt="">
+							</button>
+							<button class="search-btn btn-item">
+								<div class="btn-item__icon">
+									<img src="img/icons/search.svg" alt="">
+								</div>
+								<div class="btn-item__caption">Найти</div>
+							</button>
 						</div>
-						<div class="btn-item__caption">Найти</div>
-					</button>
+					</div>
+					<div class="search__result">
+						<!--button class="search__more">
+							Показать все результаты (23)
+						</!--button-->
+						<ul class="search__list">
+							<li class="search__item">
+								<a href="#" class="search__name">Тостер для хлеба</a>
+							</li>
+							<li class="search__item">
+								<a href="#" class="search__name">Тостер для бутербродов</a>
+							</li>
+							<li class="search__item">
+								<a href="#" class="search__name">Тостер для сэндвичей</a>
+							</li>
+						</ul>
+					</div>
 				</form>
 			</div>
 			<div class="header-nav">

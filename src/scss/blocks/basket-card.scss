@@ -97,6 +97,28 @@
 @media (max-width: 1010px) {
 }
 @media (max-width: 760px) {
+	.basket-card {
+		flex-direction: column;
+		gap: 10px;
+		&__img {
+			border-radius: 8px;
+			width: 88px;
+			height: auto;
+		}
+		&__left {
+			align-items: normal;
+			gap: 10px;
+		}
+		&__box {
+			padding-right: 0px;
+		}
+		&__right {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row-reverse;
+		}
+	}
 }
 @media (max-width: 680px) {
 }
