@@ -1,0 +1,77 @@
+.receiving-fixed {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	z-index: 16;
+	display: inline-flex;
+	flex-direction: column;
+	border-radius: 22px;
+	gap: 20px;
+	padding: 20px;
+	background-color: var(--white);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(-12px);
+	transition: all 0.3s ease-in-out;
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0px);
+	}
+	&__items {
+		width: 200px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	&__caption {
+		font-weight: 700;
+		color: var(--black);
+		margin-bottom: 8px;
+	}
+	&__value {
+		span {
+			color: var(--dark-gray);
+		}
+	}
+	&__buttons {
+		display: flex;
+		gap: 8px;
+	}
+	&__btn {
+		width: calc(50% - 4px);
+		max-width: 120px;
+	}
+	address {
+		font-style: normal;
+	}
+	&-closed {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		@media (hover: hover) {
+			&:hover {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1010px) {
+	.receiving-fixed {
+		top: 10px;
+		left: 10px;
+		border-radius: 12px;
+		gap: 15px;
+		padding: 15px;
+	}
+}
+@media (max-width: 760px) {
+}

@@ -21,6 +21,9 @@
 			margin-top: 24px;
 		}
 	}
+	&__box {
+		position: relative;
+	}
 	&-payment {
 		display: flex;
 		flex-direction: column;

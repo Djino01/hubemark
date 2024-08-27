@@ -54,6 +54,22 @@
 		width: 34px;
 		height: 34px;
 		background-color: var(--white);
+		@include transition(background);
+		svg {
+			* {
+				@include transition(all);
+			}
+		}
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--violet);
+				svg {
+					* {
+						stroke: var(--white);
+					}
+				}
+			}
+		}
 	}
 	&__quantity {
 		min-height: 60px;

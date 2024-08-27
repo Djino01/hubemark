@@ -1,0 +1,59 @@
+.receiving-info {
+	margin-top: 32px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-15px);
+	&.active {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0px);
+	}
+	&__row {
+		margin-bottom: 32px;
+	}
+	&__coll {
+		display: flex;
+		gap: 8px;
+		position: relative;
+		padding-left: 46px;
+		& + & {
+			margin-top: 24px;
+		}
+	}
+	&__icon {
+		position: absolute;
+		width: 30px;
+		height: 46px;
+		top: -4px;
+		left: 0;
+	}
+	&__caption {
+		font-weight: 700;
+		color: var(--black);
+		margin-bottom: 4px;
+	}
+	&__value {
+		span {
+			color: var(--dark-gray);
+		}
+	}
+	address {
+		font-style: normal;
+	}
+	.benefits-item {
+		background-color: var(--white);
+	}
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1010px) {
+}
+@media (max-width: 760px) {
+}

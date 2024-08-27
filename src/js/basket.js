@@ -68,4 +68,78 @@ $(document).ready(function() {
 		$(this).toggleClass("active");
 	});
 
+	const receivingSearchWrap = $('.receiving-search');
+    const receivingSearchField = $('.receiving-search__field');
+    const receivingSearchResult = $('.receiving-search__result');
+    const receivingSearchClear = $('.receiving-search-clear');
+    const receivingName = $('.receiving-name--js');
+    if (receivingSearchWrap.length > 0) {
+        receivingSearchField.on('input', function () {
+            if ($(this).val().trim() !== "") {
+                receivingSearchResult.addClass('active');
+                receivingSearchClear.addClass('active');
+            } else {
+                receivingSearchResult.removeClass('active');
+                receivingSearchClear.removeClass('active');
+            }
+        });
+    }
+	receivingSearchClear.on("click", function(e){
+		e.preventDefault();
+		receivingSearchField.val('');
+		receivingSearchResult.removeClass('active');
+		receivingSearchClear.removeClass('active');
+	});
+
+	receivingName.on("click", function (e) {
+		e.preventDefault();
+		let receivingNameValue = $(this).text().replace(/\s+/g, ' ').trim();
+		$(".receiving-fixed").addClass("active");
+		receivingSearchField.val(receivingNameValue);
+		receivingSearchResult.removeClass('active');
+		receivingSearchClear.removeClass('active');
+	});
+	$('.receiving-fixed-closed').on("click", function () {
+		$(".receiving-fixed").removeClass("active");
+	});
+
+	$('.receiving-fixed-pick-up--js').on("click", function(event) {
+		event.preventDefault();
+		$("body").addClass("lock");
+		$(".pick-up-point").addClass("active z-index");
+	});
+	$('.pick-up-point__closed, .pick-up-point__btn--js').on("click", function(event) {
+		event.preventDefault();
+		$("body").removeClass("lock");
+		$(".pick-up-point").removeClass("active");
+		setTimeout(function() {
+			$(".pick-up-point").removeClass("z-index");
+		}, 300);
+	});
+
+	$('.pick-up-point__btn--js').on("click", function(event) {
+		event.preventDefault();
+		$(".receiving-map").removeClass("active");
+		$(".receiving-fixed").removeClass("active");
+		$(".receiving-search").addClass("hidden");
+		$(".receiving-info").addClass("active");
+	});
+	
+	$(function ($) {
+		$(document).mouseup(function (e) {
+		var div = $(".pick-up-point__body");
+		if (!div.is(e.target) && div.has(e.target).length === 0) {
+			$("body").removeClass("lock");
+			$(".pick-up-point").removeClass("active");
+			if (!$(".pick-up-point").hasClass("z-index")) {
+				$(".pick-up-point").addClass("z-index");
+			} else {
+				setTimeout(function() {
+					$(".pick-up-point").removeClass("z-index");
+				}, 300);
+			}
+			}
+		});
+	});
+
 });

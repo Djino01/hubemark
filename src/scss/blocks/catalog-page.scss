@@ -32,6 +32,16 @@
 			opacity: 1;
 		}
 	}
+	&_item {
+		.title {
+			line-height: 1;
+		}
+		.catalog-page {
+			&__wrap {
+				padding-top: 0;
+			}
+		}
+	}
 }
 @media (max-width: 1199px) {
 	.catalog-page {
