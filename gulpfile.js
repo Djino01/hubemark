@@ -56,7 +56,6 @@ exports.stylesLibs = stylesLibs
 
 const scriptsLibs = () => {
   return src([  
-	  'node_modules/jquery/dist/jquery.min.js',
       'node_modules/swiper/swiper-bundle.min.js',
 	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
       'node_modules/dragscroll/dragscroll.js',
@@ -67,6 +66,16 @@ const scriptsLibs = () => {
 };
 
 exports.scriptsLibs = scriptsLibs
+
+// jQuery script
+
+const jquery = () => {
+  return src('node_modules/jquery/dist/jquery.min.js')
+    .pipe(dest('docs/js'))
+    .pipe(sync.stream())
+};
+
+exports.jquery = jquery;
 
 // Scripts
 
@@ -130,6 +139,7 @@ exports.default = series(
     stylesLibs,
     styles,
     scriptsLibs,
+    jquery, // добавляем новую задачу в основной процесс сборки
     scripts,
     copy,
   ),
