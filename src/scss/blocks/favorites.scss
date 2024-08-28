@@ -1,0 +1,85 @@
+.favorites {
+	padding-bottom: 60px;
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 16px;
+	}
+	&-value {
+		font-weight: 700;
+		color: var(--dark-gray);
+	}
+	&-empty {
+		max-width: 460px;
+		margin: 0 auto;
+		text-align: center;
+		&__desc {
+			font-size: 20px;
+			line-height: 120%;
+			color: var(--dark-gray);
+		}
+		&__btn {
+			font-size: 18px;
+			padding: 14px 30px;
+			min-width: 218px;
+			min-height: 60px;
+			margin-top: 42px;
+		}
+	}
+	&-form {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-top: 20px;
+		margin-bottom: 44px;
+	}
+	&-card {
+		.recommendations-card {
+			&::before {
+				display: none;
+			}
+			&__view {
+				display: none;
+			}
+			&__like {
+				svg {
+					path {
+						fill: #ff3d9a;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1010px) {
+}
+@media (max-width: 760px) {
+	.favorites {
+		&-empty {
+			max-width: 380px;
+			margin-top: 24px;
+			&__desc {
+				font-size: 16px;
+				margin-top: -8px;
+			}
+			&__btn {
+				font-size: 16px;
+				padding: 12px 20px;
+				min-width: 180px;
+				min-height: 48px;
+				margin-top: 24px;
+			}
+		}
+	}
+}
+@media (max-width: 680px) {
+}

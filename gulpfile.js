@@ -24,7 +24,7 @@ exports.html = html
 // Styles
 
 const styles = () => {
-  return src('src/scss/**.scss')
+  return src(['src/scss/**.scss', '!src/scss/general/fonts.scss']) // Исключаем fonts.scss из обработки
   	.pipe(sassGlob())
     .pipe(sass())
     .pipe(postcss([
@@ -51,6 +51,17 @@ const stylesLibs = () => {
 };
 
 exports.stylesLibs = stylesLibs
+
+// Fonts styles
+
+const fontsStyles = () => {
+  return src('src/scss/general/fonts.scss')
+    .pipe(sass())  // компилируем Sass в CSS
+    .pipe(dest('docs/css'))
+    .pipe(sync.stream())
+};
+
+exports.fontsStyles = fontsStyles
 
 // Scripts libs
 
@@ -124,6 +135,7 @@ exports.clear = clear
 const watcher = () => {
   watch('src/*.html', series(html))
   watch('src/scss/**/*.scss', series(styles))
+  watch('src/scss/general/fonts.scss', series(fontsStyles)) // добавляем watcher для fonts.scss
   watch('src/js/**/*.js', series(scripts))
   watch(['src/fonts/**/*', 'src/img/**/*',], series(copy))
 };
@@ -138,8 +150,9 @@ exports.default = series(
     html,
     stylesLibs,
     styles,
+    fontsStyles,  // добавляем задачу в основной процесс сборки
     scriptsLibs,
-    jquery, // добавляем новую задачу в основной процесс сборки
+    jquery,
     scripts,
     copy,
   ),

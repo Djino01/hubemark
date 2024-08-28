@@ -742,51 +742,68 @@
 .navigation {
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
 	margin-top: 24px;
 	&-links {
 		display: flex;
 		justify-content: center;
-	}
-	&-number {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 100%;
-		padding: 16px;
-		width: 48px;
-		height: 48px;
-		background-color: transparent;
-		font-weight: 700;
-		font-size: 18px;
-		line-height: 100%;
-		color: var(--black);
-		cursor: pointer;
-		transition: all 0.3s;
-		svg {
-			* {
-				transition: all 0.3s;
-			}
-		}
-		&.current,
-		&:hover {
-			background-color: var(--violet);
-			color: var(--white);
-			svg {
-				* {
-					stroke: var(--white);
-				}
-			}
-		}
-		&.disabled {
+		position: relative;
+		a,
+		.current {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 100%;
+			padding: 16px;
+			width: 48px;
+			height: 48px;
 			background-color: transparent;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 100%;
 			color: var(--black);
-			opacity: 0.6;
+			cursor: pointer;
+			transition: all 0.3s;
 			svg {
 				* {
-					stroke: #352a58;
+					transition: all 0.3s;
+				}
+			}
+			&.current,
+			&:hover {
+				background-color: var(--violet);
+				color: var(--white);
+				svg {
+					* {
+						stroke: var(--white);
+					}
+				}
+			}
+			&.disabled {
+				background-color: transparent;
+				color: var(--black);
+				opacity: 0.6;
+				svg {
+					* {
+						stroke: #352a58;
+					}
 				}
 			}
 		}
+		.prev,
+		.next {
+			position: absolute;
+			top: 0;
+		}
+		.prev {
+			left: 0;
+		}
+		.next {
+			right: 0;
+		}
+	}
+	.btn {
+		margin-bottom: 50px;
 	}
 }
 
@@ -851,6 +868,11 @@
 		width: 132px;
 		height: auto;
 	}
+	.navigation {
+		.btn {
+			margin-bottom: 32px;
+		}
+	}
 }
 @media (max-width: 1010px) {
 	.main {
@@ -897,6 +919,12 @@
 		min-width: 240px;
 		font-size: 24px;
 	}
+	.navigation {
+		margin-top: 0px;
+		.btn {
+			margin-bottom: 24px;
+		}
+	}
 }
 @media (max-width: 760px) {
 	.logo {
@@ -905,12 +933,15 @@
 	.navigation {
 		&-links {
 			width: 100%;
+			a,
+			.current {
+				padding: 5px;
+				width: 34px;
+				height: 34px;
+				font-size: 16px;
+			}
 		}
 		&-number {
-			padding: 5px;
-			width: 34px;
-			height: 34px;
-			font-size: 16px;
 			&.prev,
 			&.next {
 				display: none;

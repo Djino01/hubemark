@@ -1,0 +1,37 @@
+@@include('inc/doc-start.html', {
+"title": "Hubemart "
+})
+
+@@include('inc/page-header.html', {
+color: 'header--light'
+})
+
+<section class="favorites">
+	<div class="wrapper">
+		<div class="favorites__top">
+			<h1 class="favorites__title title title_big">Избранное</h1>
+			<div class="favorites-value">0</div>
+		</div>
+		<div class="favorites__body">
+			<div class="favorites-empty">
+				<div class="favorites-empty__wrap">
+					<div class="favorites-empty__img">
+						<img src="img/favorites/empty-img.png" alt="">
+					</div>
+					<div class="favorites-empty__desc">В избранном пока ничего нет, но<br> вы можете сохранить сюда
+						товары из каталога, которые вам приглянулись.</div>
+					<button class="favorites-empty__btn btn">В каталог</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@@include('inc/page-footer.html')
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/libs.js"></script>
+</body>
+
+</html>
