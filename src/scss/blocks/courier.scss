@@ -1,0 +1,10 @@
+.courier {
+	&__body {
+		& + & {
+			margin-top: 32px;
+		}
+	}
+	&__caption {
+		font-weight: 700;
+	}
+}

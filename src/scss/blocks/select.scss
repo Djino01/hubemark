@@ -56,3 +56,13 @@
 		}
 	}
 }
+@media (max-width: 760px) {
+	.select {
+		&-title {
+			justify-content: flex-start;
+		}
+		&-options {
+			min-width: 100%;
+		}
+	}
+}

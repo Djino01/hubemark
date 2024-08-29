@@ -108,16 +108,13 @@ $(document).ready(function() {
 		$("body").addClass("lock");
 		$(".pick-up-point").addClass("active z-index");
 	});
-	$('.pick-up-point__closed, .pick-up-point__btn--js').on("click", function(event) {
+	$('.pick-up-point__closed, .select-pick-up-point--js').on("click", function(event) {
 		event.preventDefault();
 		$("body").removeClass("lock");
-		$(".pick-up-point").removeClass("active");
-		setTimeout(function() {
-			$(".pick-up-point").removeClass("z-index");
-		}, 300);
+		$(".pick-up-point").removeClass("active z-index");
 	});
 
-	$('.pick-up-point__btn--js').on("click", function(event) {
+	$('.select-pick-up-point--js').on("click", function(event) {
 		event.preventDefault();
 		$(".receiving-map").removeClass("active");
 		$(".receiving-fixed").removeClass("active");
@@ -131,15 +128,19 @@ $(document).ready(function() {
 		if (!div.is(e.target) && div.has(e.target).length === 0) {
 			$("body").removeClass("lock");
 			$(".pick-up-point").removeClass("active");
-			if (!$(".pick-up-point").hasClass("z-index")) {
+			if ($(".pick-up-point").hasClass("active")) {
 				$(".pick-up-point").addClass("z-index");
 			} else {
-				setTimeout(function() {
-					$(".pick-up-point").removeClass("z-index");
-				}, 300);
+				$(".pick-up-point").removeClass("z-index");
 			}
 			}
 		});
+	});
+
+	$(".receiving-info-btn--js").on("click", function(){
+		$(".receiving-search").removeClass("hidden");
+		$(".receiving-info").removeClass("active");
+		$(".receiving-map").addClass("active");
 	});
 
 });

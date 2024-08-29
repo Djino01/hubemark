@@ -56,6 +56,9 @@ $(document).ready(function() {
 
 	// Focus
 	if ($(".form__field").length > 0) {
+		$('.form__label').on('mousedown touchstart', function(e) {
+			e.stopPropagation();
+		});
 		$(".form__field").each(function () {
 			let value = $(this).val();
 			if (value.length > 0) {

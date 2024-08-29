@@ -197,5 +197,6 @@ $(document).ready(function() {
 			console.warn("No valid filters loaded from cookie");
 		}
 	}
+
 	
 });

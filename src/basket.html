@@ -296,7 +296,7 @@
 							<div class="tab" data-tab="2">Курьер</div>
 						</div>
 						<div class="basket__box">
-							<div class="basket__block block active" data-block="1">
+							<div class="basket__block block" data-block="1">
 								<div class="receiving">
 									<form action="#" class="receiving-search">
 										<div class="receiving-search__body">
@@ -428,23 +428,29 @@
 														</div>
 													</div>
 													<div class="receiving-info__coll">
-														<div class="benefits-item">
-															<div class="receiving-benefits__icon">
-																<img src="img/icons/fitting.svg" alt="">
+														<div class="receiving-info__benefits">
+															<div class="benefits-item">
+																<div class="receiving-benefits__icon">
+																	<img src="img/icons/fitting.svg" alt="">
+																</div>
+																<div class="receiving-benefits__caption">Доступна
+																	примерка
+																</div>
 															</div>
-															<div class="receiving-benefits__caption">Доступна примерка
+															<div class="benefits-item">
+																<div class="receiving-benefits__icon">
+																	<img src="img/icons/time.svg" alt="">
+																</div>
+																<div class="receiving-benefits__caption">Срок хранений:
+																	5
+																	дней</div>
 															</div>
-														</div>
-														<div class="benefits-item">
-															<div class="receiving-benefits__icon">
-																<img src="img/icons/time.svg" alt="">
-															</div>
-															<div class="receiving-benefits__caption">Срок хранений: 5
-																дней</div>
 														</div>
 													</div>
 												</div>
-												<button class="receiving-info__btn btn btn_big">Выбрать другой пункт
+												<button
+													class="receiving-info-btn receiving-info-btn--js btn btn_big">Выбрать
+													другой пункт
 													выдачи</button>
 											</div>
 										</div>
@@ -471,7 +477,8 @@
 												</div>
 											</div>
 											<div class="receiving-fixed__buttons">
-												<button class="receiving-fixed__btn btn">Выбрать</button>
+												<button
+													class="receiving-fixed__btn btn select-pick-up-point--js">Выбрать</button>
 												<button
 													class="receiving-fixed__btn btn btn_light-gray receiving-fixed-pick-up--js">Подробнее</button>
 											</div>
@@ -479,9 +486,23 @@
 									</div>
 								</div>
 							</div>
-							<div class="basket__block block" data-block="2">
+							<div class="basket__block block active" data-block="2">
 								<div class="courier">
-
+									<div class="courier__body">
+										<div class="courier-delivery-address">
+											<div class="courier__caption">Адрес доставки</div>
+											<div class="courier-delivery-address__wrap">
+												<label class="checbox checbox_item">
+													<input type="radio" name="address" value="" checked>
+													<div class="checbox__icon"></div>
+													<div class="checbox__box">
+														<div class="checbox__caption">г. Москва, ул. Лихоборские бугры,
+															д. 16 кв. 105</div>
+													</div>
+												</label>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -951,7 +972,7 @@
 					</div>
 				</div>
 			</div>
-			<button class="pick-up-point__btn btn pick-up-point__btn--js">Выбрать</button>
+			<button class="pick-up-point__btn btn select-pick-up-point--js">Выбрать</button>
 		</div>
 	</div>
 </div>

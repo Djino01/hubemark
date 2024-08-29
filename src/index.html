@@ -711,29 +711,157 @@ color: 'header--light'
 					</button>
 				</div>
 			</div>
-			<button class="catalog-page-load btn btn_big">Загрузить ещё 2 324</button>
 			<nav class="navigation" role="navigation">
-				<a class="navigation-number prev disabled" href="#">
-					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M10 4L6 8L10 12" stroke="#352A58" stroke-width="2" stroke-linecap="round" />
-					</svg>
-				</a>
+				<button data-url="/catalog/shoes/?PAGEN_1=15" class="catalog-page-load btn btn_big load_more">Загрузить
+					ещё 1 из 6</button>
 				<div class="navigation-links">
-					<span class="navigation-number current">1</span>
-					<a class="navigation-number" href="#">2</a>
-					<a class="navigation-number" href="#">3</a>
-					<a class="navigation-number" href="#">4</a>
-					<a class="navigation-number" href="#">5</a>
-					<a class="navigation-number" href="#">6</a>
-					<a class="navigation-number" href="#">7</a>
-					<a class="navigation-number" href="#">8</a>
+					<a class="navigation-number prev" href="/catalog/shoes/?PAGEN_1=13">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10 4L6 8L10 12" stroke="#352A58" stroke-width="2" stroke-linecap="round">
+							</path>
+						</svg>
+					</a>
+					<a class="modern-page-first" href="/catalog/shoes/">1</a>
+					<a class="modern-page-dots" href="/catalog/shoes/?PAGEN_1=6">...</a>
+					<a href="/catalog/shoes/?PAGEN_1=12" class=" navigation-number">12</a>
+					<a href="/catalog/shoes/?PAGEN_1=13" class=" navigation-number">13</a>
+					<span class="navigation-number current">14</span>
+					<a href="/catalog/shoes/?PAGEN_1=15" class=" navigation-number">15</a>
+					<a href="/catalog/shoes/?PAGEN_1=16" class=" navigation-number">16</a>
+					<a class="modern-page-dots" href="/catalog/shoes/?PAGEN_1=18">...</a>
+					<a href="/catalog/shoes/?PAGEN_1=20">20</a>
+					<a class="navigation-number next" href="/catalog/shoes/?PAGEN_1=15">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6 4L10 8L6 12" stroke="#352A58" stroke-width="2" stroke-linecap="round">
+							</path>
+						</svg>
+					</a>
 				</div>
-				<a class="navigation-number next" href="#">
-					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M6 4L10 8L6 12" stroke="#352A58" stroke-width="2" stroke-linecap="round" />
-					</svg>
-				</a>
 			</nav>
+		</div>
+	</div>
+</section>
+
+<section class="recommendations">
+	<div class="recommendations-body">
+		<div class="wrapper">
+			<div class="recommendations__title title title_big">Вы недавно смотрели</div>
+			<div class="recommendations-swiper swiper">
+				<div class="swiper-wrapper">
+					<div class="recommendations-swiper__slide swiper-slide">
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/recommendations/swiper-3/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Тостер аккамуляторный «Bosh» с
+									таймером</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.4</div>
+									</div>
+									<a href="#" class="recommendations-card__item">520 отзывов</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>21 июля</span>
+							</button>
+						</div>
+					</div>
+					<div class="recommendations-swiper__slide swiper-slide">
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/recommendations/swiper-3/img-2.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js active">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">2 300 ₽</div>
+									<div class="recommendations-card__price-old">5 000 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Envitec» ASP
+									зелёный</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.0</div>
+									</div>
+									<a href="#" class="recommendations-card__item">102 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>Завтра</span>
+							</button>
+						</div>
+					</div>
+					<div class="recommendations-swiper__slide swiper-slide">
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/recommendations/swiper-3/img-3.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">300 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Чашка кофейная для церемонии</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>Завтра</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -747,6 +875,7 @@ color: 'header--light'
 <script src="js/libs.js"></script>
 <script src="js/main.js"></script>
 <script src="js/read-completely.js"></script>
+<script src="js/recommendations.js"></script>
 <script src="js/modal.js"></script>
 </body>
 
