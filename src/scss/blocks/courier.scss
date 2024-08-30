@@ -7,4 +7,12 @@
 	&__caption {
 		font-weight: 700;
 	}
+	&__delivery {
+		&-wrap {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-top: 16px;
+		}
+	}
 }

@@ -143,4 +143,24 @@ $(document).ready(function() {
 		$(".receiving-map").addClass("active");
 	});
 
+	var timeSwiper = new Swiper(".time-delivery-swiper", {
+		slidesPerView: "auto",
+		watchSlidesProgress: true,
+		spaceBetween: 8,
+		navigation: {
+			nextEl: ".time-delivery .time-delivery-arrow_next",
+			prevEl: ".time-delivery .time-delivery-arrow_prev",
+		},
+	});
+
+	$('.time-delivery-swiper .swiper-slide').on('click', function() {
+		const clickedIndex = $(this).index();
+		const currentIndex = timeSwiper.activeIndex;
+		if (clickedIndex !== currentIndex) {
+			timeSwiper.slideTo(clickedIndex);
+		}
+		timeSwiper.slides.removeClass('swiper-slide-active');
+		$(this).addClass('swiper-slide-active');
+	});
+
 });

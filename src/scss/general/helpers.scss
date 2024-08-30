@@ -535,7 +535,8 @@
 			}
 		}
 	}
-	&_item {
+	&_item,
+	&_cube {
 		.checbox {
 			&__icon {
 				width: 24px;
@@ -547,6 +548,13 @@
 			}
 			&__caption {
 				color: var(--black);
+			}
+		}
+	}
+	&_cube {
+		.checbox {
+			&__icon {
+				border-radius: 8px;
 			}
 		}
 	}

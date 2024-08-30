@@ -319,7 +319,7 @@
 							<div class="tab" data-tab="2">Курьер</div>
 						</div>
 						<div class="basket__box">
-							<div class="basket__block block" data-block="1">
+							<div class="basket__block block active" data-block="1">
 								<div class="receiving">
 									<form action="#" class="receiving-search">
 										<div class="receiving-search__body">
@@ -509,12 +509,12 @@
 									</div>
 								</div>
 							</div>
-							<div class="basket__block block active" data-block="2">
+							<div class="basket__block block" data-block="2">
 								<div class="courier">
 									<div class="courier__body">
-										<div class="courier-delivery-address">
+										<div class="courier__delivery">
 											<div class="courier__caption">Адрес доставки</div>
-											<div class="courier-delivery-address__wrap">
+											<div class="courier__delivery-wrap">
 												<label class="checbox checbox_item">
 													<input type="radio" name="address" value="" checked>
 													<div class="checbox__icon"></div>
@@ -523,6 +523,212 @@
 															д. 16 кв. 105</div>
 													</div>
 												</label>
+											</div>
+										</div>
+										<div class="new-address">
+											<label class="checbox checbox_item">
+												<input type="checkbox" name="new-address" value="">
+												<div class="checbox__icon"></div>
+												<div class="checbox__box">
+													<div class="checbox__caption">Другой адрес</div>
+												</div>
+											</label>
+											<div class="new-address__body">
+												<div class="new-address__over"></div>
+												<div class="new-address__container">
+													<div class="new-address-search">
+														<input type="text" class="new-address-search__field"
+															placeholder="Город, улица, номер дома">
+														<button class="new-address-search__btn">
+															<img src="img/icons/search.svg" alt="">
+														</button>
+													</div>
+													<div class="new-address__wrap">
+														<label class="form__label form__label_small">
+															<div class="form__caption">Квартира</div>
+															<input type="text" name="apartment"
+																class="form__field field">
+														</label>
+														<label class="form__label form__label_small">
+															<div class="form__caption">Подъезд</div>
+															<input type="text" name="entrance"
+																class="form__field field">
+														</label>
+														<label class="form__label form__label_small">
+															<div class="form__caption">Этаж</div>
+															<input type="text" name="floor" class="form__field field">
+														</label>
+														<label class="form__label form__label_small">
+															<div class="form__caption">Домофон</div>
+															<input type="text" name="intercom"
+																class="form__field field">
+														</label>
+														<label class="form__label form__label_big">
+															<div class="form__caption">Комментарий курьеру</div>
+															<textarea name="comments"
+																class="form__field field"></textarea>
+														</label>
+													</div>
+												</div>
+												<label class="checbox checbox_cube">
+													<input type="checkbox" name="remember-the-address" value="">
+													<div class="checbox__icon"></div>
+													<div class="checbox__box">
+														<div class="checbox__caption">Запомнить адрес</div>
+													</div>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="courier__body">
+										<div class="time-delivery">
+											<div class="time-delivery__top">
+												<div class="courier__caption">Дата и время доставки</div>
+												<div class="time-delivery-nav">
+													<div class="time-delivery-arrow time-delivery-arrow_prev">
+														<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path d="M10 12L6 8L10 4" stroke="#352A58" stroke-width="2"
+																stroke-linecap="round" />
+														</svg>
+													</div>
+													<div class="time-delivery-nav__month">июль</div>
+													<div class="time-delivery-arrow time-delivery-arrow_next">
+														<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path d="M6 4L10 8L6 12" stroke="#352A58" stroke-width="2"
+																stroke-linecap="round" />
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="time-delivery__body">
+												<div class="time-delivery-swiper swiper">
+													<div class="swiper-wrapper">
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Вт</div>
+																<div class="time-delivery__date">16</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Ср</div>
+																<div class="time-delivery__date">17</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Чт</div>
+																<div class="time-delivery__date">18</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Пт</div>
+																<div class="time-delivery__date">19</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Сб</div>
+																<div class="time-delivery__date">20</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Вс</div>
+																<div class="time-delivery__date">21</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Пн</div>
+																<div class="time-delivery__date">22</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Вт</div>
+																<div class="time-delivery__date">23</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Ср</div>
+																<div class="time-delivery__date">24</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Чт</div>
+																<div class="time-delivery__date">25</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Пт</div>
+																<div class="time-delivery__date">26</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Сб</div>
+																<div class="time-delivery__date">27</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Вс</div>
+																<div class="time-delivery__date">28</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Пд</div>
+																<div class="time-delivery__date">29</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Вт</div>
+																<div class="time-delivery__date">30</div>
+															</div>
+														</div>
+														<div class="time-delivery-slide swiper-slide">
+															<div class="time-delivery__card">
+																<div class="time-delivery__caption">Ср</div>
+																<div class="time-delivery__date">31</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="time-delivery__prices">
+													<label class="checbox checbox_item">
+														<input type="radio" name="time-delivery-prices"
+															value="08:00-16:00, 150 ₽" checked>
+														<div class="checbox__icon"></div>
+														<div class="checbox__box">
+															<div class="checbox__caption">08:00-16:00, 150 ₽</div>
+														</div>
+													</label>
+													<label class="checbox checbox_item">
+														<input type="radio" name="time-delivery-prices"
+															value="16:00-00:00, 350 ₽">
+														<div class="checbox__icon"></div>
+														<div class="checbox__box">
+															<div class="checbox__caption">16:00-00:00, 350 ₽</div>
+														</div>
+													</label>
+													<label class="checbox checbox_item">
+														<input type="radio" name="time-delivery-prices"
+															value="00:00-08:00, 150 ₽">
+														<div class="checbox__icon"></div>
+														<div class="checbox__box">
+															<div class="checbox__caption">00:00-08:00, 150 ₽</div>
+														</div>
+													</label>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1194,6 +1400,7 @@
 <script src="js/basket.js"></script>
 <script src="js/recommendations.js"></script>
 <script src="js/quantity.js"></script>
+<script src="js/new-address.js"></script>
 <script src="js/tabs.js"></script>
 <script src="js/modal.js"></script>
 </body>

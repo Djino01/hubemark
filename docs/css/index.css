@@ -718,7 +718,7 @@ hr {
     width: 24px;
     height: 24px; }
 
-.checbox_item .checbox__icon {
+.checbox_item .checbox__icon, .checbox_cube .checbox__icon {
     width: 24px;
     height: 24px;
     border-radius: 100%;
@@ -726,8 +726,11 @@ hr {
     border: 1px solid var(--field-gray);
     margin-right: 8px; }
 
-.checbox_item .checbox__caption {
+.checbox_item .checbox__caption, .checbox_cube .checbox__caption {
     color: var(--black); }
+
+.checbox_cube .checbox__icon {
+    border-radius: 8px; }
 
 .checbox input[type="checkbox"]:checked + .checbox__icon,
   .checbox input[type="radio"]:checked + .checbox__icon {
@@ -1653,6 +1656,12 @@ hr {
 
 .courier__caption {
   font-weight: 700; }
+
+.courier__delivery-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px; }
 
 .dragscroll {
   overflow: auto; }
@@ -3194,6 +3203,122 @@ hr {
   .fancybox-thumbs {
     width: 100%; } }
 
+.new-address {
+  margin-top: 24px; }
+
+.new-address__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 8;
+    margin-top: 16px; }
+
+.new-address__over {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 16;
+    display: none; }
+
+.new-address__over.active {
+      display: block; }
+
+.new-address__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; }
+
+.new-address__wrap .form__label {
+      width: calc(25% - 6px); }
+
+.new-address__wrap .form__label_big {
+        width: 100%; }
+
+.new-address__wrap .form__label_big .form__caption {
+          top: 14px; }
+
+.new-address__wrap .form__label_big .form__caption.active {
+            top: -10px; }
+
+.new-address__wrap .form__field {
+      background-color: var(--white); }
+
+.new-address-search {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 4px 4px 4px 24px;
+    background-color: var(--white);
+    width: 100%;
+    margin-bottom: 8px; }
+
+.new-address-search__field {
+      font-family: var(--font-family);
+      width: calc(100% - 44px);
+      background-color: transparent;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      padding: 10px 0;
+      border: none;
+      position: relative;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      transition: all 0.3s ease;
+      resize: none; }
+
+.new-address-search__field::-webkit-input-placeholder {
+        color: var(--black); }
+
+.new-address-search__field::-moz-placeholder {
+        color: var(--black); }
+
+.new-address-search__field:-moz-placeholder {
+        color: var(--black); }
+
+.new-address-search__field:-ms-input-placeholder {
+        color: var(--black); }
+
+.new-address-search__field:focus {
+        color: var(--black); }
+
+.new-address-search__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px 12px 12px 9px;
+      padding: 13px 14px;
+      width: 44px;
+      height: 42px;
+      background-color: var(--violet); }
+
+.new-address textarea {
+    height: 100px; }
+
+.new-address .checbox[name="remember-the-address"] .checbox__icon {
+    border-radius: 8px; }
+
+@media (max-width: 760px) {
+  .new-address-search__field {
+    font-size: 14px; }
+  .new-address__wrap .form__caption {
+    top: 12px; }
+    .new-address__wrap .form__caption.active {
+      top: -2.5px; }
+  .new-address__wrap .form__label {
+    width: calc(50% - 6px); }
+    .new-address__wrap .form__label_big {
+      width: 100%; }
+      .new-address__wrap .form__label_big .form__caption.active {
+        top: -2.5px; }
+  .new-address__wrap .form__field {
+    font-size: 14px; } }
+
 .pick-up-point {
   position: fixed;
   top: 0;
@@ -4469,7 +4594,8 @@ hr {
     width: 100%;
     height: 240px;
     border-radius: 20px;
-    overflow: hidden; }
+    overflow: hidden;
+    background-color: var(--light-gray-2); }
 
 .recommendations-card__img {
     display: block;
@@ -4479,8 +4605,8 @@ hr {
 .recommendations-card__img img {
       width: 100%;
       height: 100%;
-      -o-object-fit: cover;
-         object-fit: cover;
+      -o-object-fit: contain;
+         object-fit: contain;
       transition: all 0.3s ease-in-out; }
 
 @media (hover: hover) {
@@ -5138,6 +5264,106 @@ hr {
 @media (max-width: 680px) {
   .sortings__body {
     gap: 16px; } }
+
+.time-delivery {
+  width: 100%;
+  overflow: hidden; }
+
+.time-delivery__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px; }
+
+.time-delivery__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    padding: 15px 10px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+
+.time-delivery__caption {
+    font-size: 14px; }
+
+.time-delivery__date {
+    font-size: 18px; }
+
+.time-delivery__prices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 52px;
+    margin-top: 32px; }
+
+.time-delivery-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px; }
+
+.time-delivery-nav__month {
+      color: var(--black); }
+
+.time-delivery-arrow {
+    border-radius: 12px;
+    width: 32px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    transition: background 0.3s ease-in-out; }
+
+.time-delivery-arrow svg * {
+      transition: stroke 0.3s ease-in-out; }
+
+@media (hover: hover) {
+      .time-delivery-arrow:hover {
+        background-color: var(--violet); }
+        .time-delivery-arrow:hover svg * {
+          stroke: var(--white); } }
+
+.time-delivery-swiper {
+    width: 100%;
+    overflow: hidden; }
+
+.time-delivery-swiper * {
+      box-sizing: border-box; }
+
+.time-delivery-slide {
+    width: 55px;
+    height: 80px; }
+
+.time-delivery-slide.swiper-slide-active .time-delivery__card {
+      color: var(--white);
+      background-color: var(--violet); }
+
+@media (max-width: 1010px) {
+  .time-delivery__card {
+    border-radius: 12px;
+    padding: 10px 5px; }
+  .time-delivery__date {
+    font-size: 16px; }
+  .time-delivery__prices {
+    gap: 16px 32px;
+    margin-top: 24px; }
+  .time-delivery-slide {
+    width: 50px;
+    height: 60px; } }
+
+@media (max-width: 884px) {
+  .time-delivery {
+    width: calc(100vw - 80px); } }
+
+@media (max-width: 760px) {
+  .time-delivery {
+    width: calc(100vw - 60px); } }
 
 .user {
   display: flex;
