@@ -14,10 +14,14 @@
 		* {
 			box-sizing: border-box;
 		}
+		.swiper-wrapper {
+			height: auto;
+		}
 	}
 	&__slide {
 		border-radius: 12px;
 		border: 2px solid var(--field-gray);
+		overflow: hidden;
 		@include transition(border);
 		&.swiper-slide-active {
 			border-color: var(--violet);

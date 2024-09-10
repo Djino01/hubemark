@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // Создаем кнопку "Сбросить всё"
     const $resetAllButton = $('<button>', {
-        class: 'reset-all-filters',
+        class: 'reset-all-filters get-filter',
         text: 'Сбросить всё',
         css: { display: 'none' }
     });

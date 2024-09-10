@@ -1,0 +1,188 @@
+@@include('inc/doc-start.html', {
+"title": "Hubemart "
+})
+
+@@include('inc/page-header-user.html', {
+color: 'header--light'
+})
+
+<section class="cabinet">
+	<div class="wrapper">
+		<div class="cabinet__body">
+			<div class="cabinet__left dragscroll">
+				<nav class="cabinet-nav">
+					<a href="#" class="cabinet-item active">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-1.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Личные данные</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-2.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Заказы <span>1</span></div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-3.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Купленные товары</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-4.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Возвраты</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-5.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Избранное</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-6.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Мои отзывы и вопросы</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-7.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Платёжная информация</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-8.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Баллы</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-9.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Обращения</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-10.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Уведомления <span>10</span></div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-11.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Настройки</div>
+					</a>
+					<a href="#" class="cabinet-item cabinet-item_exit">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-exit.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Выйти</div>
+					</a>
+				</nav>
+			</div>
+			<div class="cabinet__wrap">
+				<form action="#" class="cabinet-user form">
+					<div class="cabinet-user-top">
+						<div class="cabinet-user-avatar">
+							<img src="img/icons/avatar.jpg" alt="">
+						</div>
+						<div class="cabinet-user-top__box">
+							<div class="cabinet-user__name title">Таисия Барсукова </div>
+							<a href="tel:+7 927 174 99 38" class="cabinet-user__tel">+7 927 174 99 38</a>
+						</div>
+					</div>
+					<div class="cabinet-user__body">
+						<div class="cabinet-user__caption">Общие данные</div>
+						<div class="cabinet-user__wrap">
+							<label class="form__label">
+								<div class="form__caption">Фамилия</div>
+								<input type="text" name="surname" value="Ковалёва" class="form__field field"
+									placeholder="">
+							</label>
+							<label class="form__label">
+								<div class="form__caption">Дата рождения</div>
+								<input type="text" name="date-of-birth" value="24.08.2001" class="form__field field"
+									placeholder="">
+							</label>
+							<label class="form__label">
+								<div class="form__caption">Имя</div>
+								<input type="text" name="name" value="Александра" class="form__field field"
+									placeholder="">
+							</label>
+							<label class="form__label">
+								<div class="form__caption">Телефон</div>
+								<input type="text" name="number" value="+7 916 896 99 45" class="form__field field"
+									placeholder="">
+							</label>
+							<label class="form__label">
+								<div class="form__caption">Отчество</div>
+								<input type="text" name="patronymic" value="Петровна" class="form__field field"
+									placeholder="">
+							</label>
+							<label class="form__label">
+								<div class="form__caption">Email</div>
+								<input type="email" name="email" value="barsuk@gmail.com" class="form__field field"
+									placeholder="">
+							</label>
+							<label class="form__label">
+								<div class="form__caption">Пол</div>
+								<input type="email" name="gender" value="Женский" class="form__field field"
+									placeholder="">
+							</label>
+						</div>
+					</div>
+					<div class="cabinet-user__body">
+						<div class="cabinet-user__caption">Доставка</div>
+						<div class="cabinet-user__wrap">
+							<label class="form__label form__label_big">
+								<div class="form__caption">Город, улица, номер дома</div>
+								<input type="text" name="address" value="г. Москва, ул. Лихоборские бугры, д. 16 "
+									class="form__field field" placeholder="">
+							</label>
+							<label class="form__label form__label_small">
+								<div class="form__caption">Квартира</div>
+								<input type="text" name="apartment" value="16" class="form__field field" placeholder="">
+							</label>
+							<label class="form__label form__label_small">
+								<div class="form__caption">Подъезд</div>
+								<input type="text" name="entrance" value="1" class="form__field field" placeholder="">
+							</label>
+							<label class="form__label form__label_small">
+								<div class="form__caption">Этаж</div>
+								<input type="text" name="floor" value="4" class="form__field field" placeholder="">
+							</label>
+							<label class="form__label form__label_small">
+								<div class="form__caption">Домофон</div>
+								<input type="email" name="intercom" value="58к3900" class="form__field field"
+									placeholder="">
+							</label>
+							<button class="form__btn cabinet-user__btn btn btn_big">
+								<img src="img/icons/plus.svg" alt="">
+								<span>Добавить адрес доставки</span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+
+@@include('inc/modal.html')
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/libs.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/cabinet.js"></script>
+</body>
+
+</html>

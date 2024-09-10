@@ -46,19 +46,26 @@
 	position: relative;
 	overflow: hidden;
 	@include transition(opacity);
+	&:hover {
+		opacity: 0.9;
+		color: var(--white);
+	}
 	&_gray {
 		background-color: var(--dark-gray);
 	}
 	&_light-gray {
 		background-color: var(--light-violet);
 		color: var(--violet);
+		&:hover {
+			color: var(--violet);
+		}
 	}
 	&_white {
 		background-color: var(--white);
 		color: var(--violet);
-	}
-	&:hover {
-		opacity: 0.9;
+		&:hover {
+			color: var(--violet);
+		}
 	}
 	&_big {
 		width: 100%;

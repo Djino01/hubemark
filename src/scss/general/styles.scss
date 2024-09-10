@@ -122,6 +122,10 @@ button,
 	&[disabled] {
 		cursor: initial;
 	}
+	&:hover,
+	&:focus {
+		outline: none;
+	}
 }
 
 /*input[type="text"],

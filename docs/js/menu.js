@@ -42,4 +42,28 @@ $(document).ready(function() {
 		}, 1000);
 	});
 
+	
+	if ($(".header-nav-menu").length > 0) {
+		let headerUserItem = $(".header-nav-user-item");
+		let headerUser = $(".header-nav-user");
+		let headerMenu = $(".header-nav-menu");
+		let headerMenuClosed = $(".header-nav-menu__closed");
+	
+		headerUserItem.on("click", function (e) {
+			e.preventDefault();
+			headerMenu.toggleClass("active");
+		});
+
+		headerMenuClosed.on("click", function (e) {
+			e.preventDefault();
+			headerMenu.removeClass("active");
+		});
+	
+		$(document).on("click", function (e) {
+			if (!headerUser.is(e.target) && headerUser.has(e.target).length === 0) {
+				headerMenu.removeClass("active");
+			}
+		});
+	}
+
 });

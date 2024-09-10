@@ -123,18 +123,20 @@ $(document).ready(function() {
 	});
 	
 	$(function ($) {
-		$(document).mouseup(function (e) {
-		var div = $(".pick-up-point__body");
-		if (!div.is(e.target) && div.has(e.target).length === 0) {
-			$("body").removeClass("lock");
-			$(".pick-up-point").removeClass("active");
-			if ($(".pick-up-point").hasClass("active")) {
-				$(".pick-up-point").addClass("z-index");
-			} else {
-				$(".pick-up-point").removeClass("z-index");
-			}
-			}
-		});
+		if($(".pick-up-point").length > 0) {
+			$(document).mouseup(function (e) {
+			var div = $(".pick-up-point__body");
+			if (!div.is(e.target) && div.has(e.target).length === 0) {
+				$("body").removeClass("lock");
+				$(".pick-up-point").removeClass("active");
+				if ($(".pick-up-point").hasClass("active")) {
+					$(".pick-up-point").addClass("z-index");
+				} else {
+					$(".pick-up-point").removeClass("z-index");
+				}
+				}
+			});
+		}
 	});
 
 	$(".receiving-info-btn--js").on("click", function(){
@@ -142,25 +144,27 @@ $(document).ready(function() {
 		$(".receiving-info").removeClass("active");
 		$(".receiving-map").addClass("active");
 	});
-
-	var timeSwiper = new Swiper(".time-delivery-swiper", {
-		slidesPerView: "auto",
-		watchSlidesProgress: true,
-		spaceBetween: 8,
-		navigation: {
-			nextEl: ".time-delivery .time-delivery-arrow_next",
-			prevEl: ".time-delivery .time-delivery-arrow_prev",
-		},
-	});
-
-	$('.time-delivery-swiper .swiper-slide').on('click', function() {
-		const clickedIndex = $(this).index();
-		const currentIndex = timeSwiper.activeIndex;
-		if (clickedIndex !== currentIndex) {
-			timeSwiper.slideTo(clickedIndex);
-		}
-		timeSwiper.slides.removeClass('swiper-slide-active');
-		$(this).addClass('swiper-slide-active');
-	});
+	
+	if($(".time-delivery").length > 0) {
+		var timeSwiper = new Swiper(".time-delivery-swiper", {
+			slidesPerView: "auto",
+			watchSlidesProgress: true,
+			spaceBetween: 8,
+			navigation: {
+				nextEl: ".time-delivery .time-delivery-arrow_next",
+				prevEl: ".time-delivery .time-delivery-arrow_prev",
+			},
+		});
+	
+		$('.time-delivery-swiper .swiper-slide').on('click', function() {
+			const clickedIndex = $(this).index();
+			const currentIndex = timeSwiper.activeIndex;
+			if (clickedIndex !== currentIndex) {
+				timeSwiper.slideTo(clickedIndex);
+			}
+			timeSwiper.slides.removeClass('swiper-slide-active');
+			$(this).addClass('swiper-slide-active');
+		});
+	}
 
 });
