@@ -44,6 +44,7 @@ const stylesLibs = () => {
   return src([
       'node_modules/swiper/swiper-bundle.min.css',
 	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+	  'node_modules/air-datepicker/air-datepicker.css',
     ])
     .pipe(concat('libs.css'))
     .pipe(dest('docs/css'))
@@ -70,6 +71,7 @@ const scriptsLibs = () => {
       'node_modules/swiper/swiper-bundle.min.js',
 	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
       'node_modules/dragscroll/dragscroll.js',
+      'node_modules/air-datepicker/air-datepicker.js',
     ])
     .pipe(concat('libs.js'))
     .pipe(dest('docs/js'))

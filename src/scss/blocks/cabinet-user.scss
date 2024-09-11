@@ -59,6 +59,9 @@
 			&_small {
 				width: calc(25% - 18px);
 			}
+			&.active {
+				z-index: 116;
+			}
 		}
 	}
 }

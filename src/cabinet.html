@@ -1,5 +1,5 @@
 @@include('inc/doc-start.html', {
-"title": "Hubemart "
+"title": "Личный кабинет "
 })
 
 @@include('inc/page-header-user.html', {
@@ -106,8 +106,8 @@ color: 'header--light'
 							</label>
 							<label class="form__label">
 								<div class="form__caption">Дата рождения</div>
-								<input type="text" name="date-of-birth" value="24.08.2001" class="form__field field"
-									placeholder="">
+								<input type="text" name="date-of-birth" value="24.08.2001"
+									class="form__field field date-of-birth" placeholder="">
 							</label>
 							<label class="form__label">
 								<div class="form__caption">Имя</div>
@@ -130,9 +130,27 @@ color: 'header--light'
 									placeholder="">
 							</label>
 							<label class="form__label">
-								<div class="form__caption">Пол</div>
-								<input type="email" name="gender" value="Женский" class="form__field field"
-									placeholder="">
+								<div class="form-select">
+									<div class="form-select-title">
+										<div class="form-select-title__caption">Пол</div>
+										<div class="form-select-title__value"></div>
+										<div class="form-select-title__arrow">
+											<img src="img/icons/arrow-select-small.svg" alt="">
+										</div>
+									</div>
+									<div class="form-select-options">
+										<div class="form-select-options__wrap">
+											<div class="form-select-options__value" data-id-form-select="woman">Женский
+											</div>
+											<input type="hidden" name="type" value="Женский">
+										</div>
+										<div class="form-select-options__wrap">
+											<div class="form-select-options__value" data-id-form-select="man">Мужской
+											</div>
+											<input type="hidden" name="type" value="Мужской">
+										</div>
+									</div>
+								</div>
 							</label>
 						</div>
 					</div>
@@ -140,9 +158,37 @@ color: 'header--light'
 						<div class="cabinet-user__caption">Доставка</div>
 						<div class="cabinet-user__wrap">
 							<label class="form__label form__label_big">
-								<div class="form__caption">Город, улица, номер дома</div>
-								<input type="text" name="address" value="г. Москва, ул. Лихоборские бугры, д. 16 "
-									class="form__field field" placeholder="">
+								<div class="form-select">
+									<div class="form-select-title">
+										<div class="form-select-title__caption">Город, улица, номер дома</div>
+										<div class="form-select-title__value"></div>
+										<div class="form-select-title__arrow">
+											<img src="img/icons/arrow-select-small.svg" alt="">
+										</div>
+									</div>
+									<div class="form-select-options">
+										<div class="form-select-options__wrap">
+											<div class="form-select-options__value" data-id-form-select="address-1">г.
+												Москва, ул. Лихоборские бугры, д. 16</div>
+											<input type="hidden" name="type" value="Женский">
+										</div>
+										<div class="form-select-options__wrap">
+											<div class="form-select-options__value" data-id-form-select="address-2">г.
+												Москва, ул. Молотова, д. 3</div>
+											<input type="hidden" name="type" value="Мужской">
+										</div>
+										<div class="form-select-options__wrap">
+											<div class="form-select-options__value" data-id-form-select="address-3">г.
+												Москва, ул. Ленина, д. 174</div>
+											<input type="hidden" name="type" value="Мужской">
+										</div>
+										<div class="form-select-options__wrap">
+											<div class="form-select-options__value" data-id-form-select="address-4">г.
+												Москва, ул. Федоровского, д. 188</div>
+											<input type="hidden" name="type" value="Мужской">
+										</div>
+									</div>
+								</div>
 							</label>
 							<label class="form__label form__label_small">
 								<div class="form__caption">Квартира</div>

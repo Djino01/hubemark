@@ -14,8 +14,11 @@ $(document).ready(function() {
     // Восстанавливаем фильтры из куки при загрузке страницы
     loadFiltersFromCookie();
 
+    // Отслеживаем изменения в обоих фильтрах
     $filterForm.on('change', 'input[type="radio"], input[type="checkbox"]', function() {
-        updateSelectedFilters($(this));
+        const $input = $(this);
+        updateSelectedFilters($input);
+        synchronizeFilters($input); // Синхронизируем состояние фильтров
         toggleResetAllButton();
         saveFiltersToCookie();
     });
@@ -25,66 +28,80 @@ $(document).ready(function() {
         saveFiltersToCookie();
     });
 
-    // Обработчик клика на filter--clear, вызывающий ту же функцию сброса
     $('.filter--clear').on('click', function(e) {
 		e.preventDefault();
         resetAllFilters();
         saveFiltersToCookie();
     });
 
+    // Функция обновления выбранных фильтров
     function updateSelectedFilters($input) {
-        const $label = $input.closest('label');
-        const filterText = $label.find('.checbox__caption, .item-checbox__caption').text();
+		const $label = $input.closest('label');
+		const filterText = $label.find('.checbox__caption, .item-checbox__caption').first().text().trim(); 
+	
+		if ($input.attr('type') === 'radio') {
+			const existingFilter = $selectedFiltersContainer.find(`[data-filter="${$input.attr('name')}"]`);
+			if (existingFilter.length) {
+				existingFilter.find('span').text(filterText);
+			} else {
+				const $filterElement = createFilterElement($input.attr('name'), filterText);
+				$filterElement.insertBefore($resetAllButton);
+			}
+		} else if ($input.attr('type') === 'checkbox') {
+			const filterKey = `${$input.attr('name')}-${$input.val()}`;
+			const existingFilter = $selectedFiltersContainer.find(`[data-filter="${filterKey}"]`);
+	
+			if ($input.is(':checked') && existingFilter.length === 0) {
+				const $filterElement = createFilterElement(filterKey, filterText);
+				$filterElement.insertBefore($resetAllButton);
+			} else if (!$input.is(':checked')) {
+				existingFilter.remove();
+			}
+		}
+	
+		toggleResetAllButton();
+	}
 
-        if ($input.attr('type') === 'radio') {
-            const existingFilter = $selectedFiltersContainer.find(`[data-filter="${$input.attr('name')}"]`);
-            if (existingFilter.length) {
-                existingFilter.find('span').text(filterText);
-            } else {
-                const $filterElement = $('<div>', {
-                    class: 'selected-filter',
-                    'data-filter': $input.attr('name'),
-                    html: `<span>${filterText}</span><button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M7 7L17 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M17 7L7 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-</svg></button>`
-                });
-
-                $filterElement.insertBefore($resetAllButton);
-
-                $filterElement.find('button').on('click', function() {
-                    $filterElement.remove();
-                    $input.prop('checked', false);
-                    toggleResetAllButton();
-                    saveFiltersToCookie();
-                });
-            }
-        } else if ($input.attr('type') === 'checkbox') {
-            if ($input.is(':checked')) {
-                const $filterElement = $('<div>', {
-                    class: 'selected-filter',
-                    'data-filter': $input.attr('name') + '-' + $input.val(),
-                    html: `<span>${filterText}</span><button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M7 7L17 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M17 7L7 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-</svg></button>`
-                });
-
-                $filterElement.insertBefore($resetAllButton);
-
-                $filterElement.find('button').on('click', function() {
-                    $filterElement.remove();
-                    $input.prop('checked', false);
-                    toggleResetAllButton();
-                    saveFiltersToCookie();
-                });
-            } else {
-                $selectedFiltersContainer.find(`[data-filter="${$input.attr('name')}-${$input.val()}"]`).remove();
-                toggleResetAllButton();
-                saveFiltersToCookie();
-            }
-        }
+	// Синхронизируем фильтры в обоих блоках (filter-top и filter)
+    function synchronizeFilters($input) {
+        const name = $input.attr('name');
+        const value = $input.val();
+        const type = $input.attr('type');
+        
+        // Ищем соответствующие элементы в других блоках фильтра и синхронизируем их состояние
+        $filterForm.find(`input[name="${name}"][value="${value}"]`).each(function() {
+            if ($(this).is($input)) return; // Пропускаем сам элемент
+            $(this).prop('checked', $input.prop('checked'));
+        });
     }
+
+	// Создание элемента выбранного фильтра
+	function createFilterElement(filterKey, filterText) {
+		const $filterElement = $('<div>', {
+			class: 'selected-filter',
+			'data-filter': filterKey,
+			html: `<span>${filterText}</span><button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	  <path d="M7 7L17 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+	  <path d="M17 7L7 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+	</svg></button>`
+		});
+	
+		$filterElement.find('button').on('click', function() {
+			$filterElement.remove();
+			const filterParts = filterKey.split('-');
+			const name = filterParts[0];
+			const value = filterParts[1];
+			const $input = $filterForm.find(`input[name="${name}"][value="${value}"]`);
+			$input.prop('checked', false);
+	
+			saveFiltersToCookie();
+			synchronizeFilters($input); // Синхронизируем фильтры при удалении
+			toggleResetAllButton();
+		});
+	
+		return $filterElement;
+	}
+	
 
     function toggleResetAllButton() {
         if ($selectedFiltersContainer.find('.selected-filter').length > 0) {
@@ -102,8 +119,7 @@ $(document).ready(function() {
         saveFiltersToCookie();
     }
 
-    // Функции работы с куки
-	function setCookie(name, value, days = 30) {
+    function setCookie(name, value, days = 30) {
 		let expires = '';
 		if (days) {
 			let date = new Date();
@@ -133,9 +149,6 @@ $(document).ready(function() {
         $filterForm.find('input[type="radio"]:checked, input[type="checkbox"]:checked').each(function() {
             const name = $(this).attr('name');
             const value = $(this).val();
-
-            console.log(`Checking filter: name=${name}, value=${value}`);
-
             if (value) {
                 if (!selectedFilters[name]) {
                     selectedFilters[name] = [];
@@ -150,13 +163,12 @@ $(document).ready(function() {
         }
 
         const cookieValue = cookieArray.join('&');
-
         if (cookieValue) {
             console.log("Saving to cookie: ", cookieValue);
             setCookie('selectedFilters', cookieValue);
         } else {
             console.log("No filters to save.");
-            setCookie('selectedFilters', '', -1); // Удаляем куки, если нет фильтров для сохранения
+            setCookie('selectedFilters', '', -1);
         }
     }
 
@@ -166,27 +178,17 @@ $(document).ready(function() {
 	
 		if (selectedFilters) {
 			let filtersArray = decodeURIComponent(selectedFilters).split('&');
-			let appliedFilters = new Set();
-	
 			filtersArray.forEach(function(filter) {
 				let [name, values] = filter.split('=');
-				if (name && values) { // Дополнительная проверка наличия значений
+				if (name && values) {
 					let valueArray = values.split(',');
-	
 					valueArray.forEach(function(value) {
-						let $inputs = $filterForm.find(`input[name="${name}"][value="${value}"]`);
-						$inputs.each(function() {
-							let $input = $(this);
-							let filterText = $input.closest('label').find('.checbox__caption, .item-checbox__caption').text();
-	
-							console.log(`Applying filter: name=${$input.attr('name')}, value=${value}`);
+						let $input = $filterForm.find(`input[name="${name}"][value="${value}"]`);
+						if ($input.length) {
+							console.log(`Applying filter: name=${name}, value=${value}`);
 							$input.prop('checked', true);
-	
-							if (!appliedFilters.has(value)) {
-								updateSelectedFilters($input);
-								appliedFilters.add(value);
-							}
-						});
+							updateSelectedFilters($input);
+						}
 					});
 				} else {
 					console.warn(`Invalid filter format in cookie: ${filter}`);
@@ -197,6 +199,5 @@ $(document).ready(function() {
 			console.warn("No valid filters loaded from cookie");
 		}
 	}
-
 	
 });

@@ -1,0 +1,739 @@
+@@include('inc/doc-start.html', {
+"title": "Купленные товары "
+})
+
+@@include('inc/page-header-user.html', {
+color: 'header--light'
+})
+
+<section class="cabinet">
+	<div class="wrapper">
+		<div class="cabinet__body">
+			<div class="cabinet__left dragscroll">
+				<nav class="cabinet-nav">
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-1.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Личные данные</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-2.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Заказы <span>1</span></div>
+					</a>
+					<a href="#" class="cabinet-item active">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-3.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Купленные товары</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-4.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Возвраты</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-5.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Избранное</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-6.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Мои отзывы и вопросы</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-7.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Платёжная информация</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-8.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Баллы</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-9.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Обращения</div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-10.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Уведомления <span>10</span></div>
+					</a>
+					<a href="#" class="cabinet-item">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-11.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Настройки</div>
+					</a>
+					<a href="#" class="cabinet-item cabinet-item_exit">
+						<div class="cabinet-item__icon">
+							<img src="img/cabinet/icon-exit.svg" alt="">
+						</div>
+						<div class="cabinet-item__caption">Выйти</div>
+					</a>
+				</nav>
+			</div>
+			<div class="cabinet__wrap">
+				<div class="purchased-goods">
+					<div class="purchased-goods__top">
+						<div class="select">
+							<div class="select-title">
+								<div class="select-title__icon">
+									<img src="img/icons/rating.svg" alt="">
+								</div>
+								<div class="select-title__value">Сначала новые</div>
+								<div class="select-title__arrow">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M12 6L8 10L4 6" stroke="#352A58" stroke-width="2"
+											stroke-linecap="round" />
+									</svg>
+								</div>
+							</div>
+							<div class="select-options">
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-id-select="1">Сначала новые</div>
+									<input type="hidden" name="type" value="Сначала новые">
+								</div>
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-id-select="2">По возрастанию рейтинга</div>
+									<input type="hidden" name="type" value="По возрастанию рейтинга">
+								</div>
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-id-select="3">По убыванию рейтинга</div>
+									<input type="hidden" name="type" value="По убыванию рейтинга">
+								</div>
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-id-select="4">По возрастанию цены</div>
+									<input type="hidden" name="type" value="По возрастанию цены">
+								</div>
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-id-select="5">По убыванию цены</div>
+									<input type="hidden" name="type" value="По убыванию цены">
+								</div>
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-id-select="6">По новинкам</div>
+									<input type="hidden" name="type" value="По новинкам">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="purchased-goods__wrap">
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+						<div class="recommendations-card">
+							<div class="recommendations-card__top">
+								<a href="#" class="recommendations-card__img">
+									<img src="img/catalog-page/img-1.jpg" alt="">
+								</a>
+								<button class="recommendations-card__like like--js">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M12 6.62693C7.6516 1.29153 3.06041 5.08256 3 9.16921C3 15.2531 10.2793 20.2467 12 20.2467C13.7207 20.2467 21 15.2531 21 9.16921C20.9396 5.08256 16.3484 1.29153 12 6.62693Z"
+											fill="url(#paint0_linear_43_1002)" stroke="white" stroke-width="2" />
+									</svg>
+								</button>
+								<a href="#product-modal-1"
+									class="recommendations-card__view btn btn_white product--js">Быстрый
+									просмотр</a>
+							</div>
+							<div class="recommendations-card__bottom">
+								<div class="recommendations-card__prices">
+									<div class="recommendations-card__price">3 458 ₽</div>
+									<div class="recommendations-card__price-old">6 552 ₽</div>
+								</div>
+								<a href="#" class="recommendations-card__desc">Электрический чайник «Gorenje»
+									MO17E1BH</a>
+								<div class="recommendations-card__box">
+									<div class="recommendations-card__rating">
+										<div class="recommendations-card__rating-star">
+											<img src="img/icons/star-active.svg" alt="">
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<a href="#" class="recommendations-card__item">63 отзыва</a>
+								</div>
+							</div>
+							<button class="recommendations-card__btn btn">
+								<img src="img/icons/bascet-icon.svg" alt="">
+								<span>22 июля</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+
+@@include('inc/modal.html')
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/libs.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/cabinet.js"></script>
+<script src="js/select.js"></script>
+</body>
+
+</html>

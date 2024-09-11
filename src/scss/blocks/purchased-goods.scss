@@ -1,0 +1,40 @@
+.purchased-goods {
+	&__top {
+		margin-bottom: 32px;
+	}
+	&__wrap {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 42px 16px;
+	}
+	.recommendations-card {
+		&::before {
+			display: none;
+		}
+	}
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1100px) {
+	.purchased-goods {
+		&__wrap {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 32px 16px;
+		}
+	}
+}
+@media (max-width: 1010px) {
+}
+@media (max-width: 760px) {
+	.purchased-goods {
+		&__top {
+			margin-bottom: 24px;
+		}
+		&__wrap {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 24px 16px;
+		}
+	}
+}
+@media (max-width: 680px) {
+}
