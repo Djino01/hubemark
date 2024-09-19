@@ -1,0 +1,251 @@
+.card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 28px;
+	border-radius: 20px;
+	padding: 24px 27px;
+	background-color: var(--light-gray);
+	&.hidden {
+		display: none;
+	}
+	&__left {
+		position: relative;
+		width: 140px;
+		height: 180px;
+		border-radius: 20px;
+		overflow: hidden;
+	}
+	&__right {
+		width: calc(100% - 168px);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	&__top,
+	&__bottom {
+		width: 100%;
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 8px;
+	}
+	&__order-date {
+		font-weight: 700;
+		color: var(--black);
+	}
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	&__repeat {
+		border-radius: 9px 12px 12px 9px;
+		padding: 6px;
+		width: 44px;
+		height: 44px;
+		background-color: var(--white);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.card-prices {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	&__caption {
+		font-size: 14px;
+		color: var(--dark-gray);
+	}
+	&__value {
+		font-weight: 800;
+		font-size: 24px;
+		line-height: 96%;
+		color: #3b4453;
+	}
+}
+
+.card-swiper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	&__slide {
+		width: 100%;
+		height: 100%;
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__nav {
+		position: absolute;
+		width: calc(100% - 16px);
+		left: 8px;
+		bottom: 8px;
+		border-radius: 100px;
+		padding: 5px 10px;
+		background-color: var(--white);
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(4px);
+		transition: all 0.3s ease-in-out;
+	}
+	&-prev,
+	&-next {
+		width: 16px;
+		height: 16px;
+		svg {
+			* {
+				transition: all 0.3s;
+			}
+		}
+		&.swiper-button-disabled {
+			svg {
+				* {
+					stroke: #d6d4dc;
+				}
+			}
+		}
+	}
+	&-pagination {
+		width: auto;
+		font-family: var(--font-family);
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 100%;
+		letter-spacing: -0.01em;
+		color: var(--dark-gray);
+	}
+	&:hover {
+		.card-swiper {
+			&__nav {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0px);
+			}
+		}
+	}
+}
+
+.card-code {
+	position: relative;
+	color: var(--black);
+	cursor: pointer;
+	margin-bottom: 12px;
+	span {
+		display: inline-flex;
+		padding-right: 24px;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: -2px;
+			right: 0px;
+			background-image: url(../img/icons/copy.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+}
+
+.card-received {
+	&__caption {
+		color: var(--black);
+		margin-bottom: 4px;
+	}
+	&__value {
+		font-size: 14px;
+		color: var(--dark-gray);
+	}
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1010px) {
+	.card {
+		gap: 20px;
+		border-radius: 16px;
+		padding: 20px 20px;
+		position: relative;
+		&__left {
+			position: absolute;
+			width: 120px;
+			height: 140px;
+			top: 20px;
+			left: 20px;
+			border-radius: 12px;
+		}
+		&__right {
+			width: 100%;
+			padding-left: 140px;
+		}
+		&__top {
+			min-height: 140px;
+		}
+		&__info {
+			flex-wrap: wrap;
+			gap: 8px 16px;
+		}
+		&__bottom {
+			margin-left: -140px;
+			width: calc(100% + 140px);
+		}
+	}
+}
+@media (max-width: 760px) {
+	.card {
+		gap: 12px;
+		border-radius: 12px;
+		padding: 15px;
+		&__left {
+			width: 100px;
+			height: 110px;
+			top: 15px;
+			left: 15px;
+			border-radius: 8px;
+		}
+		&__right {
+			padding-left: 115px;
+			gap: 12px;
+		}
+		&__top {
+			min-height: 110px;
+			padding-top: 5px;
+		}
+		&__value {
+			font-size: 20px;
+		}
+		&__bottom {
+			margin-left: -115px;
+			width: calc(100% + 115px);
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+	}
+	.card-prices {
+		&__value {
+			font-size: 20px;
+		}
+	}
+}
+@media (max-width: 680px) {
+}

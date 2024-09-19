@@ -61,5 +61,74 @@ $(document).ready(function() {
 		});
 	}
 
-	new AirDatepicker('.date-of-birth');
+	if($(".form-select").length > 0) {
+		new AirDatepicker('.date-of-birth');
+	}
+
+	if($(".card").length > 0) {
+		var cardSwiper = new Swiper(".card-swiper", {
+			cssMode: true,
+			navigation: {
+				nextEl: ".card-swiper .card-swiper-next",
+				prevEl: ".card-swiper .card-swiper-prev",
+			},
+			pagination: {
+				el: ".card-swiper .card-swiper-pagination",
+				type: "fraction",
+				clickable: true,
+			},
+			mousewheel: true,
+			keyboard: true,
+		});
+	}
+
+	$(".card-code--copy").on("click", function () {
+		var cardText = $(this).find("span").text();
+		var cardInput = $('<textarea>').val(cardText).appendTo('body').select();
+		document.execCommand('copy');
+		cardInput.remove();
+		$(".vendor-code").addClass("active");
+		setTimeout(() => {
+			$(".vendor-code").removeClass("active");
+		}, 3000);
+	});
+
+	let cardCounts = {};
+	$('[data-card]').each(function() {
+		let cardValue = $(this).data('card');
+		if(cardCounts[cardValue]) {
+			cardCounts[cardValue]++;
+		} else {
+			cardCounts[cardValue] = 1;
+		}
+
+	});
+	var totalCards = $('[data-card]').length;
+	$('[data-sort]').each(function() {
+        var sortValue = $(this).data('sort');
+        if (sortValue === 'all') {
+            $(this).find('span').text(totalCards);
+        } else {
+            var count = cardCounts[sortValue] || 0;
+            $(this).find('span').text(count);
+        }
+    });
+	$('[data-sort]').on('click', function() {
+        var sortValue = $(this).data('sort');
+		$('[data-sort]').removeClass("active");
+		$('[data-sort="' + sortValue +'"]').addClass("active");
+        if (sortValue === 'all') {
+            $('[data-card]').removeClass('hidden');
+        } else {
+            $('[data-card]').each(function() {
+                var cardValue = $(this).data('card');
+                if (cardValue !== sortValue) {
+                    $(this).addClass('hidden');
+                } else {
+                    $(this).removeClass('hidden');
+                }
+            });
+        }
+    });
+
 });

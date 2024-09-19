@@ -19,6 +19,25 @@
 	&__wrap {
 		flex: 1;
 	}
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-bottom: 32px;
+		.tabs {
+			min-width: 60%;
+		}
+	}
+	&__tabs {
+		width: 100%;
+	}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
 	&-item {
 		display: flex;
 		align-items: center;
@@ -65,6 +84,15 @@
 			background-color: var(--light-gray);
 		}
 	}
+	&-support {
+		padding: 10px 30px;
+		.btn-item {
+			&__icon {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
 }
 @media (max-width: 1199px) {
 	.cabinet {
@@ -74,6 +102,11 @@
 		}
 		&__body {
 			gap: 32px;
+		}
+		&__top {
+			.tabs {
+				min-width: 50%;
+			}
 		}
 	}
 }
@@ -87,6 +120,14 @@
 		&__body {
 			gap: 15px;
 		}
+		&__wrap {
+			max-width: calc(100% - 250px);
+		}
+		&__top {
+			.tabs {
+				min-width: 100%;
+			}
+		}
 		&-item {
 			&__icon {
 				width: 20px;
@@ -96,6 +137,15 @@
 				font-size: 10px;
 			}
 		}
+		&-support {
+			padding: 8px 16px;
+			.btn-item {
+				&__icon {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
 	}
 }
 @media (max-width: 760px) {
@@ -103,6 +153,17 @@
 		&__body {
 			gap: 24px;
 			flex-direction: column;
+		}
+		&__wrap {
+			max-width: 100%;
+		}
+		&__container {
+			gap: 16px;
+		}
+		&__top {
+			.tabs {
+				min-width: calc(100% + 35px);
+			}
 		}
 		&__left {
 			width: 100%;

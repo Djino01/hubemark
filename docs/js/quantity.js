@@ -1,4 +1,4 @@
-function parseWeight(weightText) {
+/*function parseWeight(weightText) {
     if (weightText.includes('кг')) {
         return parseFloat(weightText.replace(/\s+|кг/g, '').replace(',', '.'));
     } else if (weightText.includes('г')) {
@@ -73,4 +73,4 @@ $(document).ready(function() {
         $(this).closest('.basket-card').remove(); // Удаляем карточку
         updateTotals(); // Обновляем суммы после удаления карточки
     });
-});
+});*/

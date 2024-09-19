@@ -9,17 +9,21 @@
 		margin-bottom: 16px;
 	}
 	&__card {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-		border-radius: 17px;
 		width: 100%;
 		height: 100%;
-		background-color: var(--white);
-		padding: 15px 10px 12px;
-		cursor: pointer;
-		@include transition(all);
+		&-wrap {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			border-radius: 17px;
+			width: 100%;
+			height: 100%;
+			background-color: var(--white);
+			padding: 15px 10px 12px;
+			cursor: pointer;
+			@include transition(all);
+		}
 	}
 	&__caption {
 		font-size: 14px;
@@ -77,14 +81,23 @@
 	&-slide {
 		width: 55px;
 		height: 80px;
-		&.swiper-slide-active {
+		/*&.swiper-slide-active {
 			.time-delivery {
 				&__card {
 					color: var(--white);
 					background-color: var(--violet);
 				}
 			}
+		}*/
+		input[type="checkbox"]:checked + .time-delivery__card-wrap,
+		input[type="radio"]:checked + .time-delivery__card-wrap {
+			color: var(--white);
+			background-color: var(--violet);
+			transition: all 0.4s;
 		}
+	}
+	&-date {
+		display: none;
 	}
 }
 @media (max-width: 1199px) {
@@ -94,8 +107,10 @@
 @media (max-width: 1010px) {
 	.time-delivery {
 		&__card {
-			border-radius: 12px;
-			padding: 10px 5px;
+			&-wrap {
+				border-radius: 12px;
+				padding: 10px 5px;
+			}
 		}
 		&__date {
 			font-size: 16px;

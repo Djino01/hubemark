@@ -822,6 +822,27 @@
 	}
 }
 
+.tag {
+	display: inline-flex;
+	color: var(--black);
+	border-radius: 8px;
+	padding: 5px 15px;
+	&_green {
+		background-color: var(--accent-blue);
+	}
+	&_gray {
+		background-color: var(--gray-2);
+	}
+	&_red {
+		color: var(--white);
+		background-color: var(--rose);
+	}
+	&_violet {
+		color: var(--white);
+		background-color: var(--violet);
+	}
+}
+
 .sale {
 	display: inline-flex;
 	align-items: center;

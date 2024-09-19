@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	//Change quantity
-	if ($(".quantity-btn:not(.quantity-btn-basket)").length > 0) {
+	/*if ($(".quantity-btn:not(.quantity-btn-basket)").length > 0) {
 		$('.quantity-btn:not(.quantity-btn-basket)').click(function(event) {
 			var n=parseInt($(this).parent().parent().find('.quantity-value input').val());
 			if($(this).hasClass('btn-minus')){
@@ -40,7 +40,7 @@ $(document).ready(function() {
 			$(this).parent().parent().find('.quantity-value input').val(n);
 			return false;
 		});
-	}
+	}*/
 
 	// Focus
 	if ($(".form__field").length > 0) {
@@ -159,12 +159,90 @@ $(document).ready(function() {
 		$('.time-delivery-swiper .swiper-slide').on('click', function() {
 			const clickedIndex = $(this).index();
 			const currentIndex = timeSwiper.activeIndex;
+	
+			// Слайд кликнули, но он не активен, тогда делаем его активным
 			if (clickedIndex !== currentIndex) {
 				timeSwiper.slideTo(clickedIndex);
 			}
+	
+			// Убираем класс активного слайда у всех и добавляем к текущему
 			timeSwiper.slides.removeClass('swiper-slide-active');
 			$(this).addClass('swiper-slide-active');
+	
+			// Найти input внутри активного слайда и установить ему checked
+			const input = $(this).find('input[type="radio"]');
+			if (input.length) {
+				input.prop('checked', true); // Устанавливаем checked
+			}
 		});
 	}
+
+	if ($("#map").length > 0) {
+		ymaps.ready(init);
+		var myMap;
+	
+		function init() {
+			myMap = new ymaps.Map("map", {
+				center: [55.755864, 37.617698],
+				zoom: 8,
+				controls: ['zoomControl', 'fullscreenControl'] // Оставляем только масштаб и полноэкранный режим
+			});
+	
+			// Отключаем ненужные элементы управления (оставляем только масштабирование и полноэкранный режим)
+			myMap.controls.remove('geolocationControl'); // Удалить кнопку геолокации
+			myMap.controls.remove('searchControl'); // Удалить строку поиска
+			myMap.controls.remove('trafficControl'); // Удалить контроль пробок
+			myMap.controls.remove('typeSelector'); // Удалить выбор типов карты
+			myMap.controls.remove('rulerControl'); // Удалить линейку
+			myMap.controls.remove('routeEditor'); // Удалить редактор маршрутов
+	
+			var clusterer = new ymaps.Clusterer({
+				preset: 'islands#invertedBlackClusterIcons',
+				groupByCoordinates: false,
+				hasBalloon: false,
+				clusterDisableClickZoom: true,
+				clusterHideIconOnBalloonOpen: false,
+				geoObjectHideIconOnBalloonOpen: false
+			});
+	
+			// Функция для добавления маркера и привязки события click
+			function addMarker(coords, hint, iconContent) {
+				var geoObject = new ymaps.GeoObject({
+					geometry: {
+						type: "Point",
+						coordinates: coords
+					},
+					properties: {
+						hintContent: `<span>${hint}</span>`,
+						iconContent: `<span>${iconContent}</span>`
+					}
+				}, {
+					draggable: false,
+					iconLayout: 'default#image',
+					iconImageHref: "img/icons/pin.svg"
+				});
+	
+				// Добавляем обработчик события click для плавного центрирования карты
+				geoObject.events.add('click', function () {
+					myMap.panTo(coords, {
+						duration: 1000,  // Длительность анимации (в миллисекундах)
+						flying: true     // Включает эффект полёта
+					});
+				});
+	
+				clusterer.add(geoObject);
+			}
+	
+			// Добавляем маркеры
+			addMarker([55.759686, 37.614636], "улица Большая Дмитровка, 5/6с7", "улица Большая Дмитровка, 5/6с7");
+			addMarker([55.757958, 37.624195], "Никольская улица, 10", "Никольская улица, 10");
+			addMarker([55.757325, 37.612846], "Тверская улица, 3", "Тверская улица, 3");
+			addMarker([55.758078, 37.603864], "Вознесенский переулок, 7", "Вознесенский переулок, 7");
+	
+			myMap.geoObjects.add(clusterer);
+			myMap.setBounds(myMap.geoObjects.getBounds());
+		}
+	}
+	
 
 });
