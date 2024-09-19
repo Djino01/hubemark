@@ -337,71 +337,74 @@
 										<div class="receiving-search__result">
 											<ul class="receiving-search__list dragscroll">
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнелихоборский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-1">Нижнелихоборский
 														1-й
 														проезд</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнелихоборский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-2">Нижнелихоборский
 														3-й
 														проезд</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнемасловский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-3">Нижнемасловский
 														2-й
 														переулок</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#" class="receiving-search__name receiving-name--js">Нижние
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-1">Нижние
 														Мнёвники,
 														улица</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнелихоборский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-2">Нижнелихоборский
 														1-й
 														проезд</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнелихоборский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-3">Нижнелихоборский
 														3-й
 														проезд</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнемасловский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-1">Нижнемасловский
 														2-й
 														переулок</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#" class="receiving-search__name receiving-name--js">Нижние
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-2">Нижние
 														Мнёвники,
 														улица</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнелихоборский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-3">Нижнелихоборский
 														1-й
 														проезд</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнелихоборский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-1">Нижнелихоборский
 														3-й
 														проезд</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#"
-														class="receiving-search__name receiving-name--js">Нижнемасловский
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-2">Нижнемасловский
 														2-й
 														переулок</a>
 												</li>
 												<li class="receiving-search__item">
-													<a href="#" class="receiving-search__name receiving-name--js">Нижние
+													<a href="#" class="receiving-search__name receiving-name--js"
+														data-receiving="receiving-fixed-3">Нижние
 														Мнёвники,
 														улица</a>
 												</li>
@@ -477,7 +480,7 @@
 													выдачи</button>
 											</div>
 										</div>
-										<div class="receiving-fixed">
+										<div id="receiving-fixed-1" class="receiving-fixed">
 											<div class="receiving-fixed-closed">
 												<img src="img/icons/closed.svg" alt="">
 											</div>
@@ -503,7 +506,68 @@
 												<button
 													class="receiving-fixed__btn btn select-pick-up-point--js">Выбрать</button>
 												<button
-													class="receiving-fixed__btn btn btn_light-gray receiving-fixed-pick-up--js">Подробнее</button>
+													class="receiving-fixed__btn btn btn_light-gray receiving-fixed-pick-up--js"
+													data-point="pick-up-point-1">Подробнее</button>
+											</div>
+										</div>
+										<div id="receiving-fixed-2" class="receiving-fixed">
+											<div class="receiving-fixed-closed">
+												<img src="img/icons/closed.svg" alt="">
+											</div>
+											<div class="receiving-fixed__items">
+												<div class="receiving-fixed__item">
+													<div class="receiving-fixed__caption">Пункт выдачи 2</div>
+													<div class="receiving-fixed__value">
+														<address>г. Москва,<br> 3-й Нижнелихоборский проезд, д. 3 стр. 2
+														</address>
+													</div>
+												</div>
+												<div class="receiving-fixed__item">
+													<div class="receiving-fixed__caption">Режим работы</div>
+													<div class="receiving-fixed__value"><span>пн-вс: 08:00-21:00</span>
+													</div>
+												</div>
+												<div class="receiving-fixed__item">
+													<div class="receiving-fixed__caption">Дата выдачи заказа</div>
+													<div class="receiving-fixed__value">18 июля 2024</div>
+												</div>
+											</div>
+											<div class="receiving-fixed__buttons">
+												<button
+													class="receiving-fixed__btn btn select-pick-up-point--js">Выбрать</button>
+												<button
+													class="receiving-fixed__btn btn btn_light-gray receiving-fixed-pick-up--js"
+													data-point="pick-up-point-2">Подробнее</button>
+											</div>
+										</div>
+										<div id="receiving-fixed-3" class="receiving-fixed">
+											<div class="receiving-fixed-closed">
+												<img src="img/icons/closed.svg" alt="">
+											</div>
+											<div class="receiving-fixed__items">
+												<div class="receiving-fixed__item">
+													<div class="receiving-fixed__caption">Пункт выдачи 3</div>
+													<div class="receiving-fixed__value">
+														<address>г. Москва,<br> 3-й Нижнелихоборский проезд, д. 3 стр. 2
+														</address>
+													</div>
+												</div>
+												<div class="receiving-fixed__item">
+													<div class="receiving-fixed__caption">Режим работы</div>
+													<div class="receiving-fixed__value"><span>пн-вс: 08:00-21:00</span>
+													</div>
+												</div>
+												<div class="receiving-fixed__item">
+													<div class="receiving-fixed__caption">Дата выдачи заказа</div>
+													<div class="receiving-fixed__value">18 июля 2024</div>
+												</div>
+											</div>
+											<div class="receiving-fixed__buttons">
+												<button
+													class="receiving-fixed__btn btn select-pick-up-point--js">Выбрать</button>
+												<button
+													class="receiving-fixed__btn btn btn_light-gray receiving-fixed-pick-up--js"
+													data-point="pick-up-point-3">Подробнее</button>
 											</div>
 										</div>
 									</div>
@@ -1212,12 +1276,128 @@
 
 </main>
 
-<div class="pick-up-point">
+<div id="pick-up-point-1" class="pick-up-point">
 	<div class="pick-up-point__body dragscroll">
 		<div class="pick-up-point__body-wrap">
 			<div class="pick-up-point__wrap">
 				<div class="pick-up-point__top">
 					<div class="pick-up-point__title title">Пункт выдачи</div>
+					<button class="pick-up-point__closed">
+						<img src="img/icons/closed.svg" alt="">
+					</button>
+				</div>
+				<div class="pick-up-point__container">
+					<div class="pick-up-point__items">
+						<div class="pick-up-point__item">
+							<div class="pick-up-point__desc">
+								<address>г. Москва, 3-й Нижнелихоборский проезд, д. 3 стр. 2</address>
+							</div>
+						</div>
+						<div class="pick-up-point__item">
+							<div class="pick-up-point__caption">Режим работы</div>
+							<div class="pick-up-point__desc">
+								<span>пн-вс: 08:00-21:00</span>
+							</div>
+						</div>
+						<div class="pick-up-point__item">
+							<div class="pick-up-point__caption">Как добраться</div>
+							<div class="pick-up-point__desc">
+								<p>м. Окружная, остановка «метро Окружная», выход 2. Идите вдоль улицы 3-й
+									Нижнелихоборский
+									проезд до пересечения дома № 3 и сверните во двор. Пункт выдачи расположен в жилом
+									доме
+									,
+									отдельный вход с правой стороны здания, ориентир — вывеска Hubemart. Вход на
+									территорию
+									№ 777 и наш оператор откроет калитку. </p>
+							</div>
+						</div>
+					</div>
+					<div class="pick-up-point__benefits">
+						<div class="benefits-item">
+							<div class="receiving-benefits__icon">
+								<img src="img/icons/fitting.svg" alt="">
+							</div>
+							<div class="receiving-benefits__caption">Доступна примерка</div>
+						</div>
+						<div class="benefits-item">
+							<div class="receiving-benefits__icon">
+								<img src="img/icons/time.svg" alt="">
+							</div>
+							<div class="receiving-benefits__caption">Срок хранений: 5 дней</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="pick-up-point__btn btn select-pick-up-point--js">Выбрать</button>
+		</div>
+	</div>
+</div>
+
+<div id="pick-up-point-2" class="pick-up-point">
+	<div class="pick-up-point__body dragscroll">
+		<div class="pick-up-point__body-wrap">
+			<div class="pick-up-point__wrap">
+				<div class="pick-up-point__top">
+					<div class="pick-up-point__title title">Пункт выдачи 2</div>
+					<button class="pick-up-point__closed">
+						<img src="img/icons/closed.svg" alt="">
+					</button>
+				</div>
+				<div class="pick-up-point__container">
+					<div class="pick-up-point__items">
+						<div class="pick-up-point__item">
+							<div class="pick-up-point__desc">
+								<address>г. Москва, 3-й Нижнелихоборский проезд, д. 3 стр. 2</address>
+							</div>
+						</div>
+						<div class="pick-up-point__item">
+							<div class="pick-up-point__caption">Режим работы</div>
+							<div class="pick-up-point__desc">
+								<span>пн-вс: 08:00-21:00</span>
+							</div>
+						</div>
+						<div class="pick-up-point__item">
+							<div class="pick-up-point__caption">Как добраться</div>
+							<div class="pick-up-point__desc">
+								<p>м. Окружная, остановка «метро Окружная», выход 2. Идите вдоль улицы 3-й
+									Нижнелихоборский
+									проезд до пересечения дома № 3 и сверните во двор. Пункт выдачи расположен в жилом
+									доме
+									,
+									отдельный вход с правой стороны здания, ориентир — вывеска Hubemart. Вход на
+									территорию
+									№ 777 и наш оператор откроет калитку. </p>
+							</div>
+						</div>
+					</div>
+					<div class="pick-up-point__benefits">
+						<div class="benefits-item">
+							<div class="receiving-benefits__icon">
+								<img src="img/icons/fitting.svg" alt="">
+							</div>
+							<div class="receiving-benefits__caption">Доступна примерка</div>
+						</div>
+						<div class="benefits-item">
+							<div class="receiving-benefits__icon">
+								<img src="img/icons/time.svg" alt="">
+							</div>
+							<div class="receiving-benefits__caption">Срок хранений: 5 дней</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="pick-up-point__btn btn select-pick-up-point--js">Выбрать</button>
+		</div>
+	</div>
+</div>
+
+<div id="pick-up-point-3" class="pick-up-point">
+	<div class="pick-up-point__body dragscroll">
+		<div class="pick-up-point__body-wrap">
+			<div class="pick-up-point__wrap">
+				<div class="pick-up-point__top">
+					<div class="pick-up-point__title title">Пункт выдачи 3</div>
 					<button class="pick-up-point__closed">
 						<img src="img/icons/closed.svg" alt="">
 					</button>

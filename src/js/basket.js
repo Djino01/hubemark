@@ -94,7 +94,9 @@ $(document).ready(function() {
 	receivingName.on("click", function (e) {
 		e.preventDefault();
 		let receivingNameValue = $(this).text().replace(/\s+/g, ' ').trim();
-		$(".receiving-fixed").addClass("active");
+		let receivingId = $(this).data('receiving');
+		$(".receiving-fixed").removeClass("active");
+		$(`#${receivingId}`).addClass("active");
 		receivingSearchField.val(receivingNameValue);
 		receivingSearchResult.removeClass('active');
 		receivingSearchClear.removeClass('active');
@@ -105,8 +107,9 @@ $(document).ready(function() {
 
 	$('.receiving-fixed-pick-up--js').on("click", function(event) {
 		event.preventDefault();
+		let pointid = $(this).data('point');
 		$("body").addClass("lock");
-		$(".pick-up-point").addClass("active z-index");
+		$(`#${pointid}`).addClass("active z-index");
 	});
 	$('.pick-up-point__closed, .select-pick-up-point--js').on("click", function(event) {
 		event.preventDefault();
