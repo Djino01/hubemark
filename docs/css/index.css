@@ -3645,6 +3645,49 @@ hr {
     cursor: pointer;
     z-index: 8; }
 
+.modal-new {
+  border-radius: 22px;
+  padding: 64px 32px 60px 32px;
+  background-color: var(--white);
+  position: relative; }
+
+.modal-new__body {
+    max-width: 484px;
+    width: 100%; }
+
+.authorization__form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px; }
+
+.authorization__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; }
+
+.authorization__btn {
+  height: 60px; }
+
+.authorization__btn.btn_light-gray {
+    font-size: 18px; }
+
+.authorization .checbox__icon {
+  margin-right: 12px; }
+
+.authorization .checbox__caption {
+  display: block;
+  max-width: calc(100% - 36px);
+  color: #000; }
+
+.authorization .checbox__caption a {
+    color: #9747ff;
+    transition: color 0.3s ease-in-out; }
+
+@media (hover: hover) {
+      .authorization .checbox__caption a:hover {
+        color: #000; } }
+
 .product-modal__wrap {
   display: flex; }
 

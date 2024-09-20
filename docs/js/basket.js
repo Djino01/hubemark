@@ -119,10 +119,11 @@ $(document).ready(function() {
 
 	$('.select-pick-up-point--js').on("click", function(event) {
 		event.preventDefault();
+		let selectInfoId = $(this).data('info');
 		$(".receiving-map").removeClass("active");
 		$(".receiving-fixed").removeClass("active");
 		$(".receiving-search").addClass("hidden");
-		$(".receiving-info").addClass("active");
+		$(`#${selectInfoId}`).addClass("active");
 	});
 	
 	$(function ($) {

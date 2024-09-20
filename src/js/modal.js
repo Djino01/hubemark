@@ -147,4 +147,17 @@ $(document).ready(function() {
             }
         });
     });
+
+	$('body').on('click', '.modal--js', function(event) {
+        event.preventDefault();
+        var modalNAmeId = $(this).attr('href');
+        $.fancybox.open({
+            loop: false,
+            src: modalNAmeId,
+            buttons: false,
+            baseClass: 'dark-fancybox',
+            touch: false,
+            autoFocus: false,
+        });
+    });
 });

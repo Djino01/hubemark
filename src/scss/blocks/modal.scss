@@ -17,6 +17,58 @@
 	}
 }
 
+.modal-new {
+	border-radius: 22px;
+	padding: 64px 32px 60px 32px;
+	background-color: var(--white);
+	position: relative;
+	&__body {
+		max-width: 484px;
+		width: 100%;
+	}
+}
+
+.authorization {
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		margin-top: 32px;
+	}
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	&__btn {
+		height: 60px;
+		&.btn {
+			&_light-gray {
+				font-size: 18px;
+			}
+		}
+	}
+	.checbox {
+		&__icon {
+			margin-right: 12px;
+		}
+		&__caption {
+			display: block;
+			max-width: calc(100% - 36px);
+			color: #000;
+			a {
+				color: #9747ff;
+				transition: color 0.3s ease-in-out;
+				@media (hover: hover) {
+					&:hover {
+						color: #000;
+					}
+				}
+			}
+		}
+	}
+}
+
 .product-modal {
 	&__wrap {
 		display: flex;
