@@ -35,8 +35,11 @@
     "focus-visible": "^5.1.0",
     "gsap": "^3.5.1",
     "gulp-sass-glob": "^1.1.0",
+    "inputmask": "^5.0.9",
+    "intl-tel-input": "^24.5.0",
     "jquery": "^3.5.1",
     "jquery.maskedinput": "^1.4.1",
+    "libphonenumber-js": "^1.11.8",
     "scroll-lock": "^2.1.4",
     "slick-slider": "^1.8.2",
     "swiper": "^6.8.4"

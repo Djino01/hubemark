@@ -58,6 +58,43 @@
 	&__btn {
 		width: 100%;
 	}
+	&__info {
+		margin-top: 10px;
+		&-desc {
+			color: var(--dark-gray);
+		}
+		&-code {
+			display: inline-flex;
+			color: var(--violet);
+		}
+	}
+	&__info {
+		position: relative;
+		&-desc {
+			transition: all 0.3s ease-in-out;
+			&.hidden {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-5px);
+				transition: all 0s ease-in-out;
+			}
+		}
+		&-code {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(5px);
+			transition: all 0s ease-in-out;
+			&.active {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0px);
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
 	.checbox {
 		justify-content: center;
 	}

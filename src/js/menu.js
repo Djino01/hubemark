@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$('.catalog-btn').on("click", function(event) {
 		event.preventDefault();
 		$(this).toggleClass("active");
-		$("body").toggleClass("lock");
+		$("body").toggleClass("menu-lock");
 		$(".menu").toggleClass("active");
 		if (!$(".menu").hasClass("z-index")) {
 			$(".menu").addClass("z-index");
@@ -16,8 +16,9 @@ $(document).ready(function() {
 
 	$("[data-menu]").on("click", function (e) {
 		e.preventDefault();
-		$('[data-menu], [data-menu-block], [data-item], [data-item-block]').removeClass('active');
-		$(this).addClass('active');
+		$('[data-menu], [data-item]').parent().removeClass('active');
+		$('[data-menu-block], [data-item-block]').removeClass('active');
+		$(this).parent().addClass('active');
 		var menu = $(this).data('menu');
 		$('[data-menu-block="' + menu + '"]').toggleClass('active');
 		$('[data-menu-block="' + menu + '"]').parent().toggleClass('active');
@@ -25,8 +26,8 @@ $(document).ready(function() {
 
 	$("[data-item]").on("click", function (e) {
 		e.preventDefault();
-		$('[data-item]').removeClass('active');
-		$(this).addClass('active');
+		$('[data-item]').parent().removeClass('active');
+		$(this).parent().addClass('active');
 		$('[data-item-block]').removeClass('active');
 		var item = $(this).data('item');
 		$('[data-item-block="' + item + '"]').toggleClass('active');

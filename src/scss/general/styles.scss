@@ -36,9 +36,12 @@ body {
 body {
 	overflow-x: hidden;
 }
-body.lock {
-	overflow: hidden;
-	height: 100vh;
+body {
+	&.lock,
+	&.menu-lock {
+		overflow: hidden;
+		height: 100vh;
+	}
 }
 body.body-bg {
 	overflow: hidden;

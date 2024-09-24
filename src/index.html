@@ -868,7 +868,73 @@ color: 'header--light'
 
 </main>
 
-@@include('inc/modal.html')
+<div id="authorization" class="authorization main-modal modal-new" style="display:none">
+	<div class="modal-new__body">
+		<div class="main-modal-closed" data-fancybox-close>
+			<img src="img/icons/closed.svg" alt="">
+		</div>
+		<div class="modal-new__wrap">
+			<div class="modal-new__title title">Войти или создать профиль</div>
+			<form action="#" class="authorization__form form">
+				<label class="form__label">
+					<div class="form__caption">Телефон</div>
+					<input type="text" class="form__field field phone-mask" placeholder="">
+				</label>
+				<div class="authorization__buttons">
+					<button data-modal-window="#code-phone" class="form__btn btn btn_code modal--js" disabled>Получить
+						код</button>
+				</div>
+				<label class="checbox checbox_big">
+					<input type="checkbox" name="agreement" value="agreement">
+					<div class="checbox__icon"></div>
+					<div class="checbox__box">
+						<div class="checbox__caption">Соглашаюсь с <a href="#">правилами пользования</a> торговой
+							площадкой и <a href="#">возврата</a></div>
+					</div>
+				</label>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="code-phone" class="code-phone main-modal modal-new" style="display:none">
+	<div class="modal-new__body">
+		<div class="modal-new__top">
+			<a href="#" data-modal-window="#authorization" class="modal-new-back modal--js">
+				<img src="img/icons/back.svg" alt="">
+			</a>
+			<div class="main-modal-closed" data-fancybox-close>
+				<img src="img/icons/closed.svg" alt="">
+			</div>
+		</div>
+		<div class="modal-new__wrap">
+			<div class="modal-new__title title">Введите код из SMS</div>
+			<div class="modal-new__info">
+				<div class="modal-new__subtitle">
+					<div class="modal-new__subtitle-value">Код отправлен на номер телефона:<br> <span>+7 916 896 99
+							45</span>
+					</div>
+				</div>
+			</div>
+			<form action="#" class="modal-new__form form">
+				<label class="form__label">
+					<div class="form__caption">Код</div>
+					<input type="text" class="form__field field code-mask" placeholder="">
+					<div class="loader">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</label>
+				<div class="form__info">
+					<div class="form__info-desc">Получить новый код можно через <span class="countdown">00:50</span>
+					</div>
+					<button class="form__info-code">Получить новый код </button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 </div>
 <script src="js/jquery.min.js"></script>
@@ -876,6 +942,7 @@ color: 'header--light'
 <script src="js/main.js"></script>
 <script src="js/read-completely.js"></script>
 <script src="js/recommendations.js"></script>
+<script src="js/catalog.js"></script>
 <script src="js/modal.js"></script>
 </body>
 

@@ -156,6 +156,12 @@
 		padding: 20px 0;
 		&__container {
 			width: 55%;
+			#search {
+				width: calc(100% - 64px);
+				.search {
+					width: 100%;
+				}
+			}
 		}
 	}
 	.header-nav {
@@ -165,6 +171,14 @@
 @media (max-width: 1010px) {
 	.header {
 		padding: 15px 0;
+		&__container {
+			#search {
+				width: calc(100% - 120px);
+				.search {
+					width: 100%;
+				}
+			}
+		}
 	}
 	.header-top {
 		margin-bottom: 10px;
@@ -191,6 +205,7 @@
 			}
 		}
 		&__user {
+			width: auto;
 			img {
 				width: 25px;
 				height: 25px;
@@ -206,6 +221,9 @@
 		&__container {
 			width: 100%;
 			margin-top: 10px;
+			#search {
+				width: 100%;
+			}
 		}
 	}
 	.header-bottom {

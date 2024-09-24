@@ -164,6 +164,9 @@
 			.tabs {
 				min-width: calc(100% + 35px);
 			}
+			.tab {
+				white-space: nowrap;
+			}
 		}
 		&__left {
 			width: 100%;

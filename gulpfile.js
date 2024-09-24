@@ -72,6 +72,7 @@ const scriptsLibs = () => {
 	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
       'node_modules/dragscroll/dragscroll.js',
       'node_modules/air-datepicker/air-datepicker.js',
+	  'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
     ])
     .pipe(concat('libs.js'))
     .pipe(dest('docs/js'))
