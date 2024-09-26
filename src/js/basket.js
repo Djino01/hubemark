@@ -87,10 +87,13 @@ $(document).ready(function() {
 		let receivingId = $(this).data('receiving');
 		$(".receiving-fixed").removeClass("active");
 		$(`#${receivingId}`).addClass("active");
-		receivingSearchField.val(receivingNameValue);
+		setTimeout(function() {
+			receivingSearchField.val(receivingNameValue);
+		}, 100);
 		receivingSearchResult.removeClass('active');
 		receivingSearchClear.removeClass('active');
 	});
+	
 	$('.receiving-fixed-closed').on("click", function () {
 		$(".receiving-fixed").removeClass("active");
 	});

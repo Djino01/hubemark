@@ -5,6 +5,7 @@ $(document).ready(function() {
     const $rememberAddressCheckbox = $('input[name="remember-the-address"]');
     const $addressFields = $fieldsContainer.find('input[name="apartment"], input[name="entrance"], input[name="floor"], input[name="intercom"]');
     const $deliveryWrap = $('.courier__delivery-wrap');
+	const $radioInputs = $('input[type="radio"][name="address"]');
 
     // Изначально деактивируем поля
     toggleFields(false);
@@ -12,6 +13,9 @@ $(document).ready(function() {
     // Следим за изменением чекбокса "Другой адрес"
     $newAddressCheckbox.on('change', function() {
         toggleFields($(this).is(':checked'));
+		if ($(this).is(':checked')) {
+            $radioInputs.prop('checked', false);
+        }
     });
 
     // Обработчик для чекбокса "Запомнить адрес"

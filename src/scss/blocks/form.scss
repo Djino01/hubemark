@@ -95,6 +95,12 @@
 			}
 		}
 	}
+	&__aggrement {
+		color: #000;
+		a {
+			color: var(--violet);
+		}
+	}
 	.checbox {
 		justify-content: center;
 	}

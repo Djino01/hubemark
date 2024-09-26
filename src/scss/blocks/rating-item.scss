@@ -1,8 +1,8 @@
-.rating {
+.rating-item {
 	&-contanier {
 		flex-wrap: wrap;
 		margin-bottom: 0px;
-		.rating {
+		.rating-item {
 			&__stars {
 				width: 128px;
 				height: 24px;
@@ -31,15 +31,15 @@
 			display: none;
 		}
 		input[type="radio"]:checked {
-			& ~ .rating__value {
-				background: url(../img/rating/star-active.svg) no-repeat center center;
+			& ~ .rating-item__value {
+				background: url(../img/rating-item/star-active.svg) no-repeat center center;
 				background-size: 100% 100%;
 			}
 		}
 		&_big {
 			width: 140px;
 			height: 24px;
-			.rating {
+			.rating-item {
 				&__value {
 					height: 28px;
 				}
@@ -51,15 +51,15 @@
 		display: block;
 		width: calc(100% / 5);
 		height: 24px;
-		background: url(../img/rating/star-normal.svg) no-repeat center center;
+		background: url(../img/rating-item/star-normal.svg) no-repeat center center;
 		background-size: 100% 100%;
 		cursor: pointer;
-		&:not(.rating__value_disabled) {
+		&:not(.rating-item__value_disabled) {
 			&:hover {
-				background: url(../img/rating/star-active.svg) no-repeat center center;
+				background: url(../img/rating-item/star-active.svg) no-repeat center center;
 				background-size: 100% 100%;
-				& ~ .rating__value {
-					background: url(../img/rating/star-active.svg) no-repeat center center;
+				& ~ .rating-item__value {
+					background: url(../img/rating-item/star-active.svg) no-repeat center center;
 					background-size: 100% 100%;
 				}
 			}

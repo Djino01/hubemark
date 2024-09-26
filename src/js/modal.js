@@ -164,7 +164,7 @@ $(document).ready(function() {
 
 	$('body').on('click', '.modal--js', function(event) {
         event.preventDefault();
-        var modalNAmeId = $(this).data('modal-window');
+        let modalNAmeId = $(this).data('modal-window');
 		$.fancybox.close();
         $.fancybox.open({
             loop: false,
@@ -179,6 +179,16 @@ $(document).ready(function() {
 				if (countdownElement.length > 0) {
 					clearInterval(countdownInterval); // Очищаем предыдущий таймер, если он был
 					startCountdown(59, countdownElement); // Запускаем новый таймер на 59 секунд
+				}
+				if ($(modalNAmeId).hasClass('review-modal')) {
+					$(modalNAmeId).find('video').each(function() {
+						$(this).removeAttr('autoplay');
+						this.pause();
+						this.currentTime = 0;
+						this.load();
+						this.muted = true;
+						this.playbackRate = 0;
+					});
 				}
 			},
 			afterClose: function () {

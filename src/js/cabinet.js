@@ -131,4 +131,142 @@ $(document).ready(function() {
         }
     });
 
+	$('.rating-item__stars input[type="radio"]').on('change', function() {
+        var selectedRating = $(this).val();
+        var $ratingValue = $(this).closest('.review-modal__card').find('.review-modal__rating-value');
+        $ratingValue.text(selectedRating + '.0');
+    });
+
+	function uploadFilesModalReviews() {
+		var inputs = document.querySelectorAll('.inputfile');
+
+		// Устанавливаем лимиты
+		var maxLimits = {
+			images: 10,  // Лимит изображений
+			videos: 3    // Лимит видео
+		};
+
+		// Универсальная функция для загрузки файлов (изображений или видео)
+		function handleFileUpload(input, type, maxFiles, validateFile) {
+			
+			var $uploadBox = $(input).closest('.upload').find('.upload__box');
+			var $uploadContainer = $(input).closest('.upload').find('.upload__images');
+
+			input.addEventListener('change', function (e) {
+
+				// Считаем, сколько файлов уже добавлено
+				var currentCount = $uploadContainer.find('.upload__img').length;
+				var remainingSlots = maxFiles - currentCount;
+
+				// Если превышен лимит, выводим предупреждение
+				if (this.files.length > remainingSlots) {
+					alert(`Вы можете загрузить не более ${maxFiles} ${type === 'images' ? 'изображений' : 'видео'}.`);
+					input.value = ''; // Сбрасываем input
+					return;
+				}
+
+				// Фильтрация файлов для проверки
+				var validFiles = Array.prototype.filter.call(this.files, validateFile);
+
+				// Если не все файлы валидные, выводим предупреждение
+				if (validFiles.length !== this.files.length) {
+					alert(`Можно загружать только ${type === 'images' ? 'файлы формата JPEG или PNG' : 'файлы формата MP4'}.`);
+					input.value = ''; // Сбрасываем input
+					return;
+				}
+
+				// Если есть выбранные файлы, скрываем .upload__box
+				if (validFiles.length > 0) {
+					$uploadBox.hide(); // Скрываем блок upload__box
+
+					// Проходимся по валидным файлам и отображаем их
+					validFiles.forEach(function (file) {
+						var reader = new FileReader();
+
+						reader.onload = function (e) {
+							if (type === 'videos') {
+								var videoElement = document.createElement('video');
+								videoElement.src = e.target.result;
+
+								videoElement.onloadedmetadata = function () {
+									var duration = videoElement.duration / 60; // Длительность в минутах
+
+									if (duration > 5) {
+										alert('Длительность видео не должна превышать 5 минут.');
+										return;
+									}
+
+									var videoHtml = `
+										<div class="upload__img">
+											<video src="${e.target.result}" controls></video>
+											<button type="button" class="remove-file-btn">
+												<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.66675 1.66663L8.33341 8.33329" stroke="#352A58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+													<path d="M8.33341 1.66663L1.66675 8.33329" stroke="#352A58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+											</button>
+										</div>
+									`;
+									addFileToContainer(videoHtml, $uploadContainer);
+								};
+							} else {
+								var imgHtml = `
+									<div class="upload__img">
+										<img src="${e.target.result}" alt="Загруженное изображение">
+										<button type="button" class="remove-file-btn">
+											<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1.66675 1.66663L8.33341 8.33329" stroke="#352A58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8.33341 1.66663L1.66675 8.33329" stroke="#352A58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</button>
+									</div>
+								`;
+								addFileToContainer(imgHtml, $uploadContainer);
+							}
+						};
+
+						reader.readAsDataURL(file); // Читаем файл как DataURL
+					});
+				}
+			});
+
+			input.addEventListener('focus', function () {
+				input.classList.add('has-focus');
+			});
+			input.addEventListener('blur', function () {
+				input.classList.remove('has-focus');
+			});
+		}
+
+		// Добавляем файл в контейнер
+		function addFileToContainer(html, container) {
+			var $element = $(html);
+			container.append($element);
+
+			$element.find('.remove-file-btn').on('click', function () {
+				$(this).closest('.upload__img').remove();
+
+				if (container.find('.upload__img').length === 0) {
+					container.closest('.upload').find('.upload__box').show();
+				}
+			});
+		}
+
+		Array.prototype.forEach.call(inputs, function (input) {
+			if ($(input).closest('.upload').hasClass('upload-images')) {
+				handleFileUpload(input, 'images', maxLimits.images, function (file) {
+					return file.type === "image/jpeg" || file.type === "image/png";
+				});
+			}
+
+			if ($(input).closest('.upload').hasClass('upload-videos')) {
+				handleFileUpload(input, 'videos', maxLimits.videos, function (file) {
+					return file.type === "video/mp4";
+				});
+			}
+		});
+	}
+	uploadFilesModalReviews();
+	
+
 });
