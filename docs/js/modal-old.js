@@ -320,7 +320,10 @@ $(document).ready(function() {
 		$(this).setCursorPosition(3);
 	}).mask("+7(999) 999-9999");
 
-	// Функция для запуска валидации номера телефона
+	$(".code-mask").on("click", function(){
+		$(this).setCursorPosition(0);
+	}).mask("9999");
+
 	function initPhoneMaskValidation() {
 		var $phoneInput = $('.phone-mask');
 		var $btnCode = $('.modal--js.btn_code');
@@ -360,63 +363,25 @@ $(document).ready(function() {
 		};
 	}
 
-	// Функция, которая разрешает ввод только цифр в поле .code-mask и ограничивает ввод до 4 символов
-	function allowOnlyNumbers(input) {
-		// Обработчик нажатия клавиш
-		$(input).on('keydown', function(e) {
-			var currentValue = $(this).val(); // Текущее значение поля
+	function initCodeMaskValidation() {
 
-			// Разрешаем только цифры, Backspace, Delete, стрелки, Tab и комбинацию Ctrl/Cmd + V
-			if ((e.key >= '0' && e.key <= '9') || e.key === 'Backspace' || e.key === 'Delete' || e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'Tab' || (e.ctrlKey || e.metaKey && e.key === 'v')) {
-				// Проверяем, не превышает ли текущее количество символов 4, если это цифра
-				if (e.key >= '0' && e.key <= '9' && currentValue.length >= 4) {
-					e.preventDefault(); // Если 4 символа уже введено, блокируем дальнейший ввод цифр
-				}
-				return true; // Разрешаем эти клавиши
-			} else {
-				e.preventDefault(); // Блокируем остальные клавиши
+		$('.code-mask').on('keydown', function(e) {
+			if (e.key === 'Enter') {
+				e.preventDefault();
 				return false;
 			}
 		});
 
-		// Обработчик вставки через Ctrl+V
-		$(input).on('paste', function(e) {
-			var pastedData = e.originalEvent.clipboardData.getData('text'); // Получаем вставленный текст
-			var cleanedData = pastedData.replace(/\D/g, ''); // Убираем все нецифровые символы
-			var currentValue = $(this).val(); // Текущее значение поля
-
-			// Ограничиваем вставку до 4 символов
-			if (cleanedData.length + currentValue.length > 4) {
-				cleanedData = cleanedData.slice(0, 4 - currentValue.length); // Обрезаем, если вставляется больше 4 символов
-			}
-
-			// Вставляем очищенные данные
-			e.preventDefault();
-			document.execCommand('insertText', false, cleanedData);
-		});
-	}
-
-	// Валидация кода
-	function initCodeMaskValidation() {
-		// Блокировка нажатия Enter
-		$('.code-mask').on('keydown', function(e) {
-			if (e.key === 'Enter') {
-				e.preventDefault();
-				return false; // Полностью блокируем действие клавиши Enter
-			}
-		});
-
-		// Логика ввода и отправки кода
 		$('.code-mask').on('keyup input', debounce(function () {
-			var codeValue = $(this).val().replace(/_/g, ''); // Убираем символы маски, если остались
-
+			var codeValue = $(this).val().replace(/_/g, ''); // Убираем символы маски
+	
 			// Проверяем, заполнено ли поле полностью (4 цифры)
 			if (codeValue.length === 4 && /^\d{4}$/.test(codeValue)) {
 				$('.loader').addClass('active');
-
+	
 				var phone = $('.phone-mask').val();
 				var status = $('#code-phone').data('status');
-
+	
 				$.ajax({
 					url: '/auth/endpoint.php',
 					method: 'POST',
@@ -433,6 +398,7 @@ $(document).ready(function() {
 						}
 					},
 					error: function() {
+
 						alert('Ошибка при авторизации!');
 						$('.loader').removeClass('active');
 					}
@@ -443,9 +409,6 @@ $(document).ready(function() {
 		}, 300)); // 300 ms задержка между запросами
 	}
 
-	// Инициализация функции для ввода только цифр и разрешения вставки, и ограничения до 4 символов
-	allowOnlyNumbers('.code-mask');
-	// Инициализация валидации телефона и кода
-	initCodeMaskValidation();
 	initPhoneMaskValidation();
+	initCodeMaskValidation();
 });

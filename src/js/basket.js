@@ -21,10 +21,10 @@ $(document).ready(function() {
 		});
 	}
 
-	// Like
-	$(".like--js").on("click", function () {
-		$(this).toggleClass("active");
-	});
+	// // Like
+	// $(".like--js").on("click", function () {
+	// 	$(this).toggleClass("active");
+	// });
 
 	const receivingSearchWrap = $('.receiving-search');
 	const receivingSearchField = $('.receiving-search__field');
@@ -112,6 +112,10 @@ $(document).ready(function() {
 
 	$('.select-pick-up-point--js').on("click", function(event) {
 		event.preventDefault();
+		let selectPickUpFieldValue = $('.receiving-search__field').val();
+		if (selectPickUpFieldValue) {
+			$('.receiving-info__field').val(selectPickUpFieldValue);
+		}
 		let selectInfoId = $(this).data('info');
 		$(".receiving-map").removeClass("active");
 		$(".receiving-fixed").removeClass("active");
@@ -140,6 +144,7 @@ $(document).ready(function() {
 		$(".receiving-search").removeClass("hidden");
 		$(".receiving-info").removeClass("active");
 		$(".receiving-map").addClass("active");
+		$('.receiving-info__field').val('');
 	});
 
 	if($(".time-delivery").length > 0) {
